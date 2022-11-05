@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://kit.fontawesome.com/60f68411d6.js" crossorigin="anonymous"></script>
+    <title>Nike</title>
+</head>
+<body>
+  <!-- Inicio navigation bar -->
+    <header>
+      <nav class="navbar navbar-light navbar-expand-lg p-4 m-3">
+          <a class="navbar-brand" href="#"> <img src="img/Logo_NIKE.svg.ico" width="100px"   alt="nikeicon"></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon text-dark"></span>
+          </button>
+        
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item dropdown ml-3">
+                <a class="nav-link dropdown-toggle text-dark" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Categorias
+                </a>
+                <div class="dropdown-menu rounded" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="#">Hombre</a>
+                  <a class="dropdown-item" href="#">Mujer</a>
+                  <a class="dropdown-item" href="pages/descuentos.html">Descuentos</a>
+                </div>
+              </li>
+              <li class="nav-item ml-3">
+                  <a class="nav-link text-dark" href="pages/contacto.html">Contacto</a>
+              </li>
+              <li class="nav-item ml-3">
+                  <a class="nav-link text-dark" href="pages/privacidad.html">Privacidad</a>
+              </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+              <input class="form-control mr-sm-2 rounded" type="search" placeholder="Encuentra tu zapatilla!" aria-label="Search">
+              <button class="btn btn-light my-2 my-sm-0" type="submit">Buscar</button>
+            </form>
+          </div>
+        </nav>
+    </header>
+
+    <main>
+    <!-- Sección Destacados -->
+      <h1 style="text-align: center;">Destacados</h2>
+      <section id="tamano">
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+          <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+          </ol>
+          <div class="carousel-inner">
+              <div class="carousel-item active">
+                  <img class="d-block w-75 nuevo-img" src="img/pegasus392-portada.jpg" alt="First slide">
+                  <div class="carousel-caption d-none d-md-block">
+                    <h5>Pegasus39</h5>
+                    <a href="pages/pegasus39.html" class="boton-destacado">Ver más</a>
+                  </div>
+                
+              </div>
+
+            <div class="carousel-item">
+              <img class="d-block w-75 nuevo-img"  src="img/crater_impact.jpg"alt="Second slide">
+              <div class="carousel-caption d-none d-md-block">
+                <h5>Crater Impact</h5>
+                <a href="#" class="boton-destacado">Ver más</a>
+              </div>
+            </div>
+
+            <div class="carousel-item">
+              <img class="d-block w-75 nuevo-img" src="img/lebron-mix.jpg" alt="Third slide">
+              <div class="carousel-caption d-none d-md-block">
+                <h5>Lebron Mix</h5>
+                <a href="#" class="boton-destacado">Ver más</a>
+              </div>
+            </div>
+          </div>
+
+          <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Anterior</span>
+          </a>
+          <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Siguiente</span>
+          </a>
+        </div>
+      </section>
+
+      <span style="display: block; text-align: center; font-size: 25px; font-weight: bold; margin-top: 10px;">Descuentos</span>
+      <section class="flex-container">
+        <div class="caja">
+          <img src="img/craterimpact.png" alt="craterimpact">
+          <div class="info-foto">
+            <div class="texto-foto">
+              Crater Impact
+            </div>
+          </div>
+        </div>
+        
+        <div class="caja">
+          <img src="img/nike rara esa.png" alt="goflyease">
+          <div class="info-foto">
+            <div class="texto-foto">
+              Go FlyEase
+            </div>
+          </div>
+        </div>
+
+        <div class="caja">
+          <img src="img/jordan.png" alt="jordanairmax3">
+          <div class="info-foto">
+            <div class="texto-foto">
+              Jordan Air Max 3
+            </div>
+          </div>
+        </div>
+      </section>
+    </main> 
+    <!-- Sección Footer -->
+    <footer class="footer">
+        <ul>
+          <li><a href="https://www.facebook.com/nike" target="_blank"><i class="fa-brands fa-facebook fa-2xl text-dark"></a></i></li>
+          <li><a href="https://twitter.com/Nike" target="_blank"><i class="fa-brands fa-twitter fa-2xl text-dark"></a></i></li>
+          <li><a href="https://www.instagram.com/nike/" target="_blank"><i class="fa-brands fa-instagram fa-2xl text-dark"></a></i></li>
+          <li><a href="https://www.linkedin.com/company/nike/" target="_blank"><i class="fa-brands fa-linkedin fa-2xl text-dark"></a></i></li>
+        </ul>
+    </footer>
+    <!--Bootstrap-->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>

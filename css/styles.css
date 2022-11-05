@@ -1,0 +1,458 @@
+@charset "UTF-8";
+/* Inicio Responsive */
+@media screen and (max-width: 1200px) and (min-width: 767px) {
+  /*Inicio responsive página pegasus39*/
+  .fotos img {
+    transform: translateX(-200%);
+  }
+  .fotos video {
+    transform: translateX(-230%);
+    height: 50%;
+  }
+  .compra {
+    transform: translateX(30%);
+    font-size: 20px;
+  }
+}
+@media screen and (max-width: 768px) and (min-width: 600px) {
+  .nuevo-img {
+    height: 400px;
+  }
+  /*Inicio responsive página privacidad*/
+  .parrafo {
+    font-size: 15px;
+    margin: 10px 10px 0px 10px;
+    padding: 10px 10px 0px 10px;
+  }
+  /*Inicio responsive página pegasus39*/
+  .fotos img {
+    transform: translateX(-200%);
+  }
+  .fotos video {
+    transform: translateX(-230%);
+    height: 50%;
+  }
+  .compra {
+    transform: translateX(30%);
+    font-size: 20px;
+  }
+  .compra .texto-compra {
+    transform: translateX(-40%);
+  }
+}
+@media screen and (max-width: 600px) and (min-width: 480px) {
+  .active {
+    background-color: none;
+  }
+  .nuevo-img {
+    height: 400px;
+  }
+  .texto-compra {
+    font-size: 20px;
+  }
+  .texto-compra form button {
+    margin: 10px;
+    padding: 15px;
+  }
+  .fotos img {
+    transform: translateX(-150%);
+  }
+  .fotos video {
+    display: none;
+  }
+  .grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    width: 100%;
+  }
+  .contact {
+    margin-left: 50px;
+  }
+  .form {
+    margin-top: 30px;
+    transform: translateX(8%);
+  }
+  .footer {
+    flex-direction: column;
+  }
+  .footer ul {
+    transform: translateX(-20%);
+  }
+  .footer ul li {
+    padding: 20px 0px 0px 20px;
+    display: block;
+  }
+}
+@media screen and (max-width: 480px) and (min-width: 320px) {
+  .nuevo-img {
+    height: 300px;
+  }
+  .compra {
+    grid-template-areas: "articulo" "compra";
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    width: 100%;
+  }
+  .texto-compra {
+    font-size: 20px;
+    transform: translate(20%, -270%);
+  }
+  .texto-compra form button {
+    transform: translateX(50%);
+    margin: 10px;
+    padding: 15px;
+  }
+  .fotos img {
+    transform: translateX(-150%);
+  }
+  .fotos video {
+    display: none;
+  }
+  .grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    width: 100%;
+  }
+  .contact {
+    margin-left: 30px;
+  }
+  .form {
+    margin-top: 30px;
+    transform: translateX(8%);
+  }
+  .footer {
+    flex-direction: column;
+  }
+  .footer ul {
+    transform: translateX(-20%);
+  }
+  .footer ul li {
+    padding: 20px 0px 0px 20px;
+    display: block;
+  }
+}
+@media screen and (max-width: 320px) {
+  .parrafo {
+    margin: 15px;
+    padding: 0;
+  }
+  .parrafo h1 {
+    font-size: 20px;
+    text-decoration: underline 1px;
+  }
+  .active {
+    background-color: transparent;
+  }
+  .nuevo-img {
+    height: 200px;
+  }
+  .footer {
+    flex-direction: column;
+  }
+  .footer ul {
+    transform: translateX(-20%);
+  }
+  .footer ul li {
+    padding: 20px 0px 0px 20px;
+    display: block;
+  }
+  .texto-compra {
+    font-size: 16px;
+    transform: translate(20%, -290%);
+  }
+  .texto-compra form button {
+    margin: 10px;
+    padding: 15px;
+  }
+  .fotos img {
+    transform: translateX(-150%);
+  }
+  .fotos video {
+    display: none;
+  }
+}
+#nikeicon:hover {
+  animation: mover 1s;
+  animation-iteration-count: 1;
+}
+
+body {
+  font-family: "Comic Sans";
+  background-color: #f1f1f1;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  font-size: 20px;
+  background-color: #f1f1f1;
+}
+
+.active {
+  background-color: #e4e4e4;
+  border-radius: 20px;
+}
+
+/*Footer*/
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
+}
+.footer ul {
+  list-style-type: none;
+}
+.footer ul li {
+  display: inline-block;
+  margin: 15px;
+}
+
+/*Seccion descuentos-index*/
+.nuevo-img {
+  height: 600px;
+  transform: translateX(16%);
+}
+
+.flex-container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+.flex-container .caja {
+  background-color: beige;
+  color: rgb(14, 13, 13);
+  font-family: sans-serif;
+  font-weight: bold;
+  width: 300px;
+  height: 400px;
+  margin: 10px;
+  line-height: 400px;
+  text-align: center;
+  box-shadow: 10px;
+  border-radius: 20px;
+}
+.flex-container .caja img {
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  display: block;
+}
+.flex-container .caja:hover .info-foto{
+  height: 50%;
+}
+.flex-container .caja .info-foto {
+  position: relative;
+  bottom: 100%;
+  left: 0;
+  right: 0;
+  overflow: hidden;
+  width: 100%;
+  height: 0;
+  transition: 0.5s ease;
+  border-radius: 20px;
+}
+.flex-container .caja .info-foto .texto-foto {
+  color: black;
+  font-weight: bold;
+  font-size: 15px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.boton-destacado {
+  text-decoration: none;
+  background-color: #f1f1f1;
+  color: rgb(14, 13, 13);
+  cursor: pointer;
+  padding: 7px;
+  border: none;
+  border-radius: 15px;
+}
+.boton-destacado:hover {
+  background-color: rgb(14, 13, 13);
+  color: #f1f1f1;
+}
+
+/*Fin index*/
+/*Inicio Contacto*/
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 0.7fr;
+  grid-template-rows: 1fr;
+  grid-column-gap: 5px;
+  grid-row-gap: 5px;
+}
+.grid .form {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+  width: 80%;
+  height: 80%;
+}
+.grid .form legend {
+  text-align: center;
+  border: 1px solid rgb(14, 13, 13);
+}
+.grid .form .inputs {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+.grid .form .submit {
+  background-color: rgb(209, 209, 209);
+  color: rgb(14, 13, 13);
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.grid .form .submit:hover {
+  background-color: rgb(184, 183, 183);
+}
+.grid .form .reset {
+  background-color: rgb(209, 209, 209);
+  color: rgb(14, 13, 13);
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.grid .form .reset:hover {
+  background-color: rgb(184, 183, 183);
+}
+.grid .form .contact {
+  text-align: center;
+  margin-right: 10px;
+  color: black;
+}
+.grid .form .contact a {
+  text-decoration: none;
+  color: black;
+}
+
+/*Fin contacto*/
+/*inicio pegasus39*/
+.compra {
+  display: grid;
+  grid-template-areas: "articulo compra" "articulo compra";
+  grid-template-columns: 1fr;
+  grid-template-rows: 0.4fr 1fr;
+  font-size: 25px;
+  height: 500px;
+}
+.compra button {
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  background-color: #d1d1d1;
+  transform: translateX(90%);
+  padding: 8px;
+}
+.compra button:hover {
+  background-color: rgb(14, 13, 13);
+  color: whitesmoke;
+}
+.compra img {
+  object-fit: cover;
+  max-width: 100%;
+  height: 100%;
+  width: 40%;
+}
+.compra p {
+  margin: 40px 40px 40px 40px;
+  padding: 40px 40px 40px 40px;
+}
+.compra .fotos {
+  transform: translateX(130%);
+  width: 300px;
+  height: 500px;
+}
+.compra .fotos video {
+  height: 50%;
+}
+.compra .fotos img {
+  max-width: 100%;
+  width: 80%;
+  height: 50%;
+  object-fit: cover;
+  object-position: center;
+}
+.compra .texto-compra {
+  height: 30%;
+}
+.compra .descripcion {
+  font-size: 15px;
+  margin: 0 !important;
+}
+
+/*Fin pegasus39*/
+/*Inicio privacidad*/
+.parrafo {
+  text-align: justify;
+  margin: 10px 50px 0px 50px;
+  padding: 10px 50px 0px 50px;
+  color: rgb(35, 31, 31);
+  font-size: 20px;
+}
+
+/*Fin privacidad*/
+/*Inicio animacion*/
+@keyframes mover {
+  0% {
+    transform: rotate(0deg) scale(1);
+    opacity: 100%;
+  }
+  10% {
+    transform: rotate(5deg) scale(1.1);
+    opacity: 90%;
+  }
+  20% {
+    transform: rotate(10deg) scale(1.2);
+    opacity: 80%;
+  }
+  30% {
+    transform: rotate(5deg) scale(1.1);
+    opacity: 70%;
+  }
+  40% {
+    transform: rotate(0deg) scale(1);
+    opacity: 60%;
+  }
+  50% {
+    transform: rotate(-5deg) scale(1.1);
+    opacity: 50%;
+  }
+  60% {
+    transform: rotate(-10deg) scale(1.2);
+    opacity: 40%;
+  }
+  70% {
+    transform: rotate(-5deg) scale(1.1);
+    opacity: 30%;
+  }
+  80% {
+    transform: rotate(0deg) scale(1);
+    opacity: 20%;
+  }
+  90% {
+    transform: rotate(5deg) scale(1.1);
+    opacity: 10%;
+  }
+  100% {
+    transform: rotate(0deg) scale(1);
+    opacity: 0%;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */

@@ -1,0 +1,20 @@
+@mixin boton{
+    background-color: $color-botones;
+    color: $color-global-negro;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    &:hover{
+        background-color: $color-botones-hover;
+    }
+}
+@mixin translateX($num){
+    transform: translateX($num);
+}
+@mixin translateY($num){
+    transform: translateY($num);
+}
+@mixin translate($numX, $numY){
+    transform: translate($numX, $numY);
+}

@@ -1,0 +1,17 @@
+{
+  "name": "proyecto_nike",
+  "version": "1.0.0",
+  "description": "Proyecto de Nike creado por Diego Aguero",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-css": "sass css/style.scss estilos/styles.css",
+    "watch-css": "nodemon -e scss -x \"npm run build-css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "github.com/DiegoAguero/Nike_Proyecto/"
+  },
+  "author": "Diego Aguero",
+  "license": "MIT"
+}

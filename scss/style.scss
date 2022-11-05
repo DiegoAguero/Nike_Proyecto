@@ -1,0 +1,277 @@
+@import "mixin";
+@import "media";
+$color-global: #f1f1f1;
+$color-global-negro: rgb(14, 13, 13);
+$color-botones: rgb(209, 209, 209);
+$color-botones-hover: rgb(184, 183, 183);
+
+#nikeicon:hover{
+    animation: mover 1s;
+    animation-iteration-count: 1;
+}
+body{
+    font-family: 'Comic Sans';
+    background-color: $color-global;
+    margin: 0;
+    padding: 0;
+}
+header{
+    font-size: 20px;
+    background-color: $color-global;
+
+}
+.active{
+    background-color:#e4e4e4; 
+    border-radius: 20px;
+}
+/*Footer*/
+.footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+    ul{
+        list-style-type: none;
+        li{
+            display: inline-block;
+            margin: 15px;
+        }
+    }
+}
+
+/*Seccion descuentos-index*/
+
+.nuevo-img{
+   height: 600px;
+   @include translateX(16%);
+}
+.flex-container{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    .caja{
+        background-color: beige;
+        color: $color-global-negro;
+        font-family: sans-serif;
+        font-weight: bold;
+        width: 300px;
+        height: 400px;
+        margin: 10px;
+        line-height: 400px;
+        text-align: center;
+        box-shadow: 10px;
+        border-radius: 20px;
+        img{
+            width: 100%;
+            height: 100%;
+            border-radius: 20px;
+            display: block;
+        }
+        &:hover{
+            height: 50%;
+        }
+        .info-foto{
+            position: relative;
+            bottom: 100%;
+            left: 0;
+            right: 0;
+            overflow: hidden;
+            width: 100%;
+            height: 0;
+            transition: .5s ease;
+            border-radius: 20px;
+            .texto-foto{
+                color: black;
+                font-weight: bold;
+                font-size: 15px;    
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                -webkit-transform: translate(-50%, -50%);
+                -ms-transform: translate(-50%, -50%);
+                transform: translate(-50%, -50%);
+                text-align: center;
+            }
+
+        }
+    }
+}
+
+
+.boton-destacado{
+    text-decoration: none;
+    background-color: $color-global;
+    color: $color-global-negro;
+    cursor: pointer;
+    padding: 7px;
+    border: none;
+    border-radius: 15px;
+    &:hover{
+        background-color: $color-global-negro;
+        color: $color-global;
+    }
+}
+/*Fin index*/
+
+/*Inicio Contacto*/
+.grid{
+    display: grid;
+    grid-template-columns: 1fr 0.7fr;
+    grid-template-rows: 1fr;
+    grid-column-gap: 5px;
+    grid-row-gap: 5px;
+    .form{
+        border-radius: 5px;
+        background-color: #f2f2f2;
+        padding: 20px;
+        width: 80%;
+        height: 80%;
+        legend{
+            text-align: center;
+            border: 1px solid $color-global-negro;
+        }
+        .inputs{
+            width: 100%; 
+            padding: 12px;
+            border: 1px solid #ccc; 
+            border-radius: 4px; 
+            box-sizing: border-box; 
+            margin-top: 6px; 
+            margin-bottom: 16px; 
+            resize: vertical 
+        }
+        .submit{
+            @include boton;
+        }
+        .reset{
+            @include boton;
+        }
+        .contact{
+            text-align: center;
+            margin-right: 10px;
+            color: black;
+            a{
+                text-decoration: none;
+                color: black;  
+            }
+
+        } 
+
+    }
+}
+/*Fin contacto*/
+
+/*inicio pegasus39*/
+.compra{
+    display: grid;
+    grid-template-areas: "articulo compra"
+                         "articulo compra";
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.4fr 1fr;
+    font-size: 25px;
+    height: 500px;
+    button{
+        border-radius: 10px;
+        border: none;
+        cursor: pointer;
+        background-color: #d1d1d1;
+        @include translateX(90%);
+        padding: 8px;
+        &:hover{
+            background-color: $color-global-negro;
+            color: whitesmoke;
+        }
+    }
+    img{
+        object-fit: cover;
+        max-width: 100%;
+        height: 100%;
+        width: 40%;
+    }
+    p{
+        margin: 40px 40px 40px 40px;
+        padding: 40px 40px 40px 40px;
+    }
+    .fotos{
+        @include translateX(130%);
+        width: 300px;
+        height: 500px;
+        video{
+            height: 50%;
+        }
+        img{
+            max-width: 100%;
+            width: 80%;
+            height: 50%;
+            object-fit: cover;
+            object-position: center;
+        }
+    }
+    .texto-compra{
+        height: 30%;
+    }
+    .descripcion{
+        font-size: 15px;
+        margin: 0 !important;
+    }
+}
+/*Fin pegasus39*/
+
+/*Inicio privacidad*/
+
+.parrafo{
+    text-align: justify;
+    margin: 10px 50px 0px 50px;
+    padding: 10px 50px 0px 50px;
+    color: rgb(35, 31, 31);
+    font-size: 20px;
+}
+/*Fin privacidad*/
+
+/*Inicio animacion*/
+@keyframes mover {
+    0%{
+        transform: rotate(0deg) scale(1);
+        opacity: 100%;
+    }
+    10%{
+        transform: rotate(5deg) scale(1.1);
+        opacity: 90%;
+    }
+    20%{
+        transform: rotate(10deg) scale(1.2);
+        opacity: 80%;
+    }
+    30%{
+        transform: rotate(5deg) scale(1.1);
+        opacity: 70%;
+    }
+    40%{
+        transform: rotate(0deg) scale(1);
+        opacity: 60%;
+    }
+    50%{
+        transform: rotate(-5deg) scale(1.1);
+        opacity: 50%;
+    }
+    60%{
+        transform: rotate(-10deg) scale(1.2);
+        opacity: 40%;
+    }
+    70%{
+        transform: rotate(-5deg) scale(1.1);
+        opacity: 30%;
+    }
+    80%{
+        transform: rotate(0deg) scale(1);
+        opacity: 20%;
+    }
+    90%{
+        transform: rotate(5deg) scale(1.1);
+        opacity: 10%;
+    }
+    100%{
+        transform: rotate(0deg) scale(1);
+        opacity: 0%;
+    }
+}

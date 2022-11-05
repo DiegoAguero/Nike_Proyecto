@@ -1,0 +1,207 @@
+/* Inicio Responsive */
+@media screen and (max-width: 1200px) and (min-width:767px){
+    /*Inicio responsive página pegasus39*/
+     .fotos{
+         img{
+             @include translateX(-200%);
+             
+         }
+         video{
+             @include translateX(-230%);
+             height: 50%;
+         }
+     }
+     .compra{
+         @include translateX(30%);
+         font-size: 20px;
+     }
+ }
+ @media screen and (max-width: 768px) and (min-width: 600px){
+     // Inicio responsive página index  
+     .nuevo-img{
+         height: 400px;
+     }
+ 
+     /*Inicio responsive página privacidad*/
+     .parrafo{
+         font-size: 15px;
+         margin: 10px 10px 0px 10px;
+         padding: 10px 10px 0px 10px;
+     }
+     /*Inicio responsive página pegasus39*/
+     .fotos{
+         img{
+             @include translateX(-200%);
+         }
+         video{
+             @include translateX(-230%);
+             height: 50%;
+         }
+     }
+     .compra{
+         @include translateX(30%);
+         font-size: 20px;
+         .texto-compra{
+             @include translateX(-40%);
+         }
+     }
+         
+ }
+ @media screen and (max-width: 600px) and (min-width: 480px){
+ 
+     .active{
+         background-color: none;
+     }
+ 
+     // Inicio responsive página index  
+     .nuevo-img{
+         height: 400px;
+     }
+     
+     .texto-compra{
+         font-size: 20px;
+         form{
+             button{
+                 margin: 10px;
+                 padding: 15px;
+             }
+         }
+     }
+ 
+     .fotos{
+         img{
+             @include translateX(-150%);
+         }
+         video{
+             display: none;
+         }
+     }
+     //Contacto
+     .grid{
+         grid-template-columns: 1fr;
+         grid-template-rows: 1fr;
+         width: 100%;
+     }
+     .contact{
+         margin-left: 50px;
+     }
+     .form{
+         margin-top: 30px;
+         transform: translateX(8%);
+     }
+     //Footer
+     .footer{
+         flex-direction: column;
+         ul{ 
+             @include translateX(-20%);
+             li{
+                 padding: 20px 0px 0px 20px;     
+                 display: block;
+             }
+         }
+     }
+ }
+ @media screen and (max-width: 480px) and (min-width: 320px){
+     // Inicio responsive página index  
+     .nuevo-img{
+         height: 300px;
+     }
+     //pegasus39
+     .compra{
+         grid-template-areas: 'articulo'
+                              'compra';
+         grid-template-columns: 1fr;
+         grid-template-rows: 1fr;
+         width: 100%;
+     }
+     .texto-compra{
+         font-size: 20px;
+         transform: translate(20% ,-270%);
+         form{
+             button{
+                 @include translateX(50%);
+                 margin: 10px;
+                 padding: 15px;
+             }
+         }
+     }
+     .fotos{
+         img{
+             @include translateX(-150%);
+         }
+         video{
+             display: none;
+         }
+     }
+     //Contacto
+     .grid{
+         grid-template-columns: 1fr;
+         grid-template-rows: 1fr;
+         width: 100%;
+     }
+     .contact{
+         margin-left: 30px;
+     }
+     .form{
+         margin-top: 30px;
+         @include translateX(8%);
+     }
+     //Footer
+     .footer{
+         flex-direction: column;
+         ul{ 
+             @include translateX(-20%);
+             li{
+                 padding: 20px 0px 0px 20px;     
+                 display: block;
+             }
+         }
+     }
+ }
+ @media screen and (max-width: 320px){
+     .parrafo{
+         h1{
+             font-size: 20px;
+             text-decoration:underline 1px;
+         }
+         margin: 15px;
+         padding: 0;
+     }
+     .active{
+         background-color: transparent;
+     }
+     // Inicio responsive página index  
+     .nuevo-img{
+         height: 200px;
+     }
+     
+     //Footer
+     .footer{
+         flex-direction: column;
+         ul{ 
+             @include translateX(-20%);
+             li{
+                 padding: 20px 0px 0px 20px;     
+                 display: block;
+             }
+         }
+     }
+     .texto-compra{
+         font-size: 16px;
+         @include translate(20% ,-290%);
+         form{
+             button{
+                 margin: 10px;
+                 padding: 15px;
+             }
+         }
+     }
+     .fotos{
+         img{
+             @include translateX(-150%);
+         }
+         video{
+             display: none;
+         }
+     }
+ }
