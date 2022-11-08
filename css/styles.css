@@ -1,176 +1,4 @@
 @charset "UTF-8";
-/* Inicio Responsive */
-@media screen and (max-width: 1200px) and (min-width: 767px) {
-  /*Inicio responsive página pegasus39*/
-  .fotos img {
-    transform: translateX(-200%);
-  }
-  .fotos video {
-    transform: translateX(-230%);
-    height: 50%;
-  }
-  .compra {
-    transform: translateX(30%);
-    font-size: 20px;
-  }
-}
-@media screen and (max-width: 768px) and (min-width: 600px) {
-  .nuevo-img {
-    height: 400px;
-  }
-  /*Inicio responsive página privacidad*/
-  .parrafo {
-    font-size: 15px;
-    margin: 10px 10px 0px 10px;
-    padding: 10px 10px 0px 10px;
-  }
-  /*Inicio responsive página pegasus39*/
-  .fotos img {
-    transform: translateX(-200%);
-  }
-  .fotos video {
-    transform: translateX(-230%);
-    height: 50%;
-  }
-  .compra {
-    transform: translateX(30%);
-    font-size: 20px;
-  }
-  .compra .texto-compra {
-    transform: translateX(-40%);
-  }
-}
-@media screen and (max-width: 600px) and (min-width: 480px) {
-  .active {
-    background-color: none;
-  }
-  .nuevo-img {
-    height: 400px;
-  }
-  .texto-compra {
-    font-size: 20px;
-  }
-  .texto-compra form button {
-    margin: 10px;
-    padding: 15px;
-  }
-  .fotos img {
-    transform: translateX(-150%);
-  }
-  .fotos video {
-    display: none;
-  }
-  .grid {
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr;
-    width: 100%;
-  }
-  .contact {
-    margin-left: 50px;
-  }
-  .form {
-    margin-top: 30px;
-    transform: translateX(8%);
-  }
-  .footer {
-    flex-direction: column;
-  }
-  .footer ul {
-    transform: translateX(-20%);
-  }
-  .footer ul li {
-    padding: 20px 0px 0px 20px;
-    display: block;
-  }
-}
-@media screen and (max-width: 480px) and (min-width: 320px) {
-  .nuevo-img {
-    height: 300px;
-  }
-  .compra {
-    grid-template-areas: "articulo" "compra";
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr;
-    width: 100%;
-  }
-  .texto-compra {
-    font-size: 20px;
-    transform: translate(20%, -270%);
-  }
-  .texto-compra form button {
-    transform: translateX(50%);
-    margin: 10px;
-    padding: 15px;
-  }
-  .fotos img {
-    transform: translateX(-150%);
-  }
-  .fotos video {
-    display: none;
-  }
-  .grid {
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr;
-    width: 100%;
-  }
-  .contact {
-    margin-left: 30px;
-  }
-  .form {
-    margin-top: 30px;
-    transform: translateX(8%);
-  }
-  .footer {
-    flex-direction: column;
-  }
-  .footer ul {
-    transform: translateX(-20%);
-  }
-  .footer ul li {
-    padding: 20px 0px 0px 20px;
-    display: block;
-  }
-}
-@media screen and (max-width: 320px) {
-  .parrafo {
-    margin: 15px;
-    padding: 0;
-  }
-  .parrafo h1 {
-    font-size: 20px;
-    text-decoration: underline 1px;
-  }
-  .active {
-    background-color: transparent;
-  }
-  .nuevo-img {
-    height: 200px;
-  }
-  .footer {
-    flex-direction: column;
-  }
-  .footer ul {
-    transform: translateX(-20%);
-  }
-  .footer ul li {
-    padding: 20px 0px 0px 20px;
-    display: block;
-  }
-  .texto-compra {
-    font-size: 16px;
-    transform: translate(20%, -290%);
-  }
-  .texto-compra form button {
-    margin: 10px;
-    padding: 15px;
-  }
-  .fotos img {
-    transform: translateX(-150%);
-  }
-  .fotos video {
-    display: none;
-  }
-}
 #nikeicon:hover {
   animation: mover 1s;
   animation-iteration-count: 1;
@@ -452,6 +280,179 @@ header {
   100% {
     transform: rotate(0deg) scale(1);
     opacity: 0%;
+  }
+}
+/* Inicio Responsive */
+@media screen and (max-width: 1200px) and (min-width: 767px) {
+  /*Inicio responsive página pegasus39*/
+  .fotos img {
+    transform: translateX(-200%);
+  }
+  .fotos video {
+    transform: translateX(-230%);
+    height: 50%;
+  }
+  .compra {
+    transform: translateX(30%);
+    font-size: 20px;
+  }
+}
+@media screen and (max-width: 768px) and (min-width: 600px) {
+  .nuevo-img {
+    height: 400px;
+  }
+  /*Inicio responsive página privacidad*/
+  .parrafo {
+    font-size: 15px;
+    margin: 10px 10px 0px 10px;
+    padding: 10px 10px 0px 10px;
+  }
+  /*Inicio responsive página pegasus39*/
+  .fotos img {
+    transform: translateX(-200%);
+  }
+  .fotos video {
+    transform: translateX(-230%);
+    height: 50%;
+  }
+  .compra {
+    transform: translateX(30%);
+    font-size: 20px;
+  }
+  .compra .texto-compra {
+    transform: translateX(-40%);
+  }
+}
+@media screen and (max-width: 600px) and (min-width: 480px) {
+  .active {
+    background-color: none;
+  }
+  .nuevo-img {
+    height: 400px;
+  }
+  .texto-compra {
+    font-size: 20px;
+  }
+  .texto-compra form button {
+    margin: 10px;
+    padding: 15px;
+  }
+  .fotos img {
+    transform: translateX(-150%);
+  }
+  .fotos video {
+    display: none;
+  }
+  .grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    width: 100%;
+  }
+  .contact {
+    margin-left: 50px;
+  }
+  .form {
+    margin-top: 30px;
+    transform: translateX(8%);
+  }
+  .footer {
+    flex-direction: column;
+  }
+  .footer ul {
+    transform: translateX(-20%);
+  }
+  .footer ul li {
+    padding: 20px 0px 0px 20px;
+    display: block;
+  }
+}
+@media screen and (max-width: 480px) and (min-width: 320px) {
+  .nuevo-img {
+    height: 300px;
+  }
+  .compra {
+    grid-template-areas: "articulo" "compra";
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    width: 100%;
+  }
+  .texto-compra {
+    font-size: 20px;
+    transform: translate(20%, -270%);
+  }
+  .texto-compra form button {
+    transform: translateX(50%);
+    margin: 10px;
+    padding: 15px;
+  }
+  .fotos img {
+    transform: translateX(-150%);
+  }
+  .fotos video {
+    display: none;
+  }
+  .grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    width: 100%;
+  }
+  .contact {
+    margin-left: 30px;
+  }
+  .form {
+    margin-top: 30px;
+    transform: translateX(8%);
+  }
+  .footer {
+    flex-direction: column;
+  }
+  .footer ul {
+    transform: translateX(-20%);
+  }
+  .footer ul li {
+    padding: 20px 0px 0px 20px;
+    display: block;
+  }
+}
+@media screen and (max-width: 320px) {
+  .parrafo {
+    margin: 15px;
+    padding: 0;
+  }
+  .parrafo h1 {
+    font-size: 20px;
+    text-decoration: underline 1px;
+  }
+  .active {
+    background-color: transparent;
+  }
+  .nuevo-img {
+    height: 200px;
+  }
+  .footer {
+    flex-direction: column;
+  }
+  .footer ul {
+    transform: translateX(-20%);
+  }
+  .footer ul li {
+    padding: 20px 0px 0px 20px;
+    display: block;
+  }
+  .texto-compra {
+    font-size: 16px;
+    transform: translate(-150%, 200%);
+  }
+  .texto-compra form button {
+    margin: 10px;
+    padding: 15px;
+    transform: translateX(-10%);
+  }
+  .fotos img {
+    transform: translateX(-150%);
+  }
+  .fotos video {
+    display: none;
   }
 }
 

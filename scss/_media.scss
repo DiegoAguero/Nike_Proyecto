@@ -1,3 +1,4 @@
+@import "mixin";
 /* Inicio Responsive */
 @media screen and (max-width: 1200px) and (min-width:767px){
     /*Inicio responsive página pegasus39*/
@@ -162,7 +163,7 @@
      .parrafo{
          h1{
              font-size: 20px;
-             text-decoration:underline 1px;
+             text-decoration: underline 1px;
          }
          margin: 15px;
          padding: 0;
@@ -188,11 +189,12 @@
      }
      .texto-compra{
          font-size: 16px;
-         @include translate(20% ,-290%);
+         @include translate(-150% ,200%);
          form{
              button{
                  margin: 10px;
                  padding: 15px;
+                 @include translateX(-10%)
              }
          }
      }
