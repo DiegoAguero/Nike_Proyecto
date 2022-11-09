@@ -99,13 +99,13 @@ header{
 
 .boton-destacado{
     text-decoration: none;
-    background-color: $color-global;
+    background-color: #d1d1d1;
     color: $color-global-negro;
     cursor: pointer;
     padding: 7px;
-    border: none;
     border-radius: 15px;
     &:hover{
+        text-decoration: none;
         background-color: $color-global-negro;
         color: $color-global;
     }
@@ -178,7 +178,7 @@ header{
         padding: 8px;
         &:hover{
             background-color: $color-global-negro;
-            color: whitesmoke;
+            color: $color-global;
         }
     }
     img{

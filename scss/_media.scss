@@ -1,5 +1,4 @@
 @import "mixin";
-/* Inicio Responsive */
 @media screen and (max-width: 1200px) and (min-width:767px){
     /*Inicio responsive página pegasus39*/
      .fotos{
@@ -25,7 +24,7 @@
  
      /*Inicio responsive página privacidad*/
      .parrafo{
-         font-size: 15px;
+         font-size: 20px;
          margin: 10px 10px 0px 10px;
          padding: 10px 10px 0px 10px;
      }
@@ -51,7 +50,7 @@
  @media screen and (max-width: 600px) and (min-width: 480px){
  
      .active{
-         background-color: none;
+         background-color: transparent;
      }
  
      // Inicio responsive página index  
@@ -59,21 +58,27 @@
          height: 400px;
      }
      
-     .texto-compra{
-         font-size: 20px;
-         form{
-             button{
-                 margin: 10px;
-                 padding: 15px;
-             }
-         }
+     .compra{
+        grid-template-areas: 'articulo'
+        'compra';
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
      }
- 
+     .texto-compra{
+        font-size: 20px;
+        transform: translate(20% ,-270%);
+        form{
+            button{
+                margin: 10px;
+                padding: 15px;
+            }
+        }
+    }
      .fotos{
-         img{
-             @include translateX(-150%);
-         }
-         video{
+        img{
+            @include translateX(-120%);
+        }
+        video{
              display: none;
          }
      }
@@ -101,9 +106,16 @@
              }
          }
      }
+     .parrafo{
+        margin: 15px;
+        padding: 0;
+    }
  }
  @media screen and (max-width: 480px) and (min-width: 320px){
-     // Inicio responsive página index  
+    .active{
+        background-color: transparent;
+    } 
+    // Inicio responsive página index  
      .nuevo-img{
          height: 300px;
      }
@@ -127,9 +139,9 @@
          }
      }
      .fotos{
-         img{
-             @include translateX(-150%);
-         }
+        img{
+            @include translateX(-150%);
+        }
          video{
              display: none;
          }
@@ -147,6 +159,13 @@
          margin-top: 30px;
          @include translateX(8%);
      }
+     .parrafo{
+        h1{
+            font-size: 30px;
+        }
+        margin: 15px;
+        padding: 0;
+    }
      //Footer
      .footer{
          flex-direction: column;
@@ -162,8 +181,7 @@
  @media screen and (max-width: 320px){
      .parrafo{
          h1{
-             font-size: 20px;
-             text-decoration: underline 1px;
+             font-size: 30px;
          }
          margin: 15px;
          padding: 0;
@@ -175,7 +193,19 @@
      .nuevo-img{
          height: 200px;
      }
-     
+    //Contacto
+     .grid{
+         grid-template-columns: 1fr;
+         grid-template-rows: 1fr;
+         width: 100%;
+     }
+     .contact{
+         margin-left: 30px;
+     }
+     .form{
+         margin-top: 30px;
+         @include translateX(8%);
+     }
      //Footer
      .footer{
          flex-direction: column;

@@ -95,14 +95,14 @@ header {
 
 .boton-destacado {
   text-decoration: none;
-  background-color: #f1f1f1;
+  background-color: #d1d1d1;
   color: rgb(14, 13, 13);
   cursor: pointer;
   padding: 7px;
-  border: none;
   border-radius: 15px;
 }
 .boton-destacado:hover {
+  text-decoration: none;
   background-color: rgb(14, 13, 13);
   color: #f1f1f1;
 }
@@ -189,7 +189,7 @@ header {
 }
 .compra button:hover {
   background-color: rgb(14, 13, 13);
-  color: whitesmoke;
+  color: #f1f1f1;
 }
 .compra img {
   object-fit: cover;
@@ -282,7 +282,6 @@ header {
     opacity: 0%;
   }
 }
-/* Inicio Responsive */
 @media screen and (max-width: 1200px) and (min-width: 767px) {
   /*Inicio responsive página pegasus39*/
   .fotos img {
@@ -303,7 +302,7 @@ header {
   }
   /*Inicio responsive página privacidad*/
   .parrafo {
-    font-size: 15px;
+    font-size: 20px;
     margin: 10px 10px 0px 10px;
     padding: 10px 10px 0px 10px;
   }
@@ -325,20 +324,26 @@ header {
 }
 @media screen and (max-width: 600px) and (min-width: 480px) {
   .active {
-    background-color: none;
+    background-color: transparent;
   }
   .nuevo-img {
     height: 400px;
   }
+  .compra {
+    grid-template-areas: "articulo" "compra";
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+  }
   .texto-compra {
     font-size: 20px;
+    transform: translate(20%, -270%);
   }
   .texto-compra form button {
     margin: 10px;
     padding: 15px;
   }
   .fotos img {
-    transform: translateX(-150%);
+    transform: translateX(-120%);
   }
   .fotos video {
     display: none;
@@ -365,8 +370,15 @@ header {
     padding: 20px 0px 0px 20px;
     display: block;
   }
+  .parrafo {
+    margin: 15px;
+    padding: 0;
+  }
 }
 @media screen and (max-width: 480px) and (min-width: 320px) {
+  .active {
+    background-color: transparent;
+  }
   .nuevo-img {
     height: 300px;
   }
@@ -403,6 +415,13 @@ header {
     margin-top: 30px;
     transform: translateX(8%);
   }
+  .parrafo {
+    margin: 15px;
+    padding: 0;
+  }
+  .parrafo h1 {
+    font-size: 30px;
+  }
   .footer {
     flex-direction: column;
   }
@@ -420,14 +439,25 @@ header {
     padding: 0;
   }
   .parrafo h1 {
-    font-size: 20px;
-    text-decoration: underline 1px;
+    font-size: 30px;
   }
   .active {
     background-color: transparent;
   }
   .nuevo-img {
     height: 200px;
+  }
+  .grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    width: 100%;
+  }
+  .contact {
+    margin-left: 30px;
+  }
+  .form {
+    margin-top: 30px;
+    transform: translateX(8%);
   }
   .footer {
     flex-direction: column;
