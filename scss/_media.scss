@@ -140,7 +140,7 @@
      }
      .fotos{
         img{
-            @include translateX(-150%);
+            @include translateX(-130%);
         }
          video{
              display: none;
