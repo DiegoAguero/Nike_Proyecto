@@ -66,7 +66,7 @@ header {
   border-radius: 20px;
   display: block;
 }
-.flex-container .caja:hover {
+.flex-container .caja:hover .info-foto {
   height: 50%;
 }
 .flex-container .caja .info-foto {
