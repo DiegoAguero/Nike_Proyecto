@@ -295,6 +295,15 @@ header {
     transform: translateX(30%);
     font-size: 20px;
   }
+  .compra .fotos {
+    transform: translateX(-500%);
+  }
+  .compra .fotos img {
+    transform: translateX(600%);
+  }
+  .compra .fotos video {
+    transform: translateX(730%);
+  }
 }
 @media screen and (max-width: 768px) and (min-width: 600px) {
   .nuevo-img {
@@ -307,19 +316,22 @@ header {
     padding: 10px 10px 0px 10px;
   }
   /*Inicio responsive página pegasus39*/
-  .fotos img {
-    transform: translateX(-200%);
-  }
-  .fotos video {
-    transform: translateX(-230%);
-    height: 50%;
-  }
   .compra {
     transform: translateX(30%);
     font-size: 20px;
   }
   .compra .texto-compra {
     transform: translateX(-40%);
+  }
+  .compra .fotos {
+    transform: translateX(-100%);
+  }
+  .compra .fotos img {
+    transform: translateX(100%);
+  }
+  .compra .fotos video {
+    transform: translateX(130%);
+    height: 50%;
   }
 }
 @media screen and (max-width: 600px) and (min-width: 480px) {
@@ -334,18 +346,21 @@ header {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
   }
-  .texto-compra {
+  .compra .texto-compra {
     font-size: 20px;
-    transform: translate(20%, -270%);
+    transform: translate(40%, -250%);
   }
-  .texto-compra form button {
+  .compra .texto-compra form button {
     margin: 10px;
     padding: 15px;
   }
-  .fotos img {
-    transform: translateX(-120%);
+  .compra .fotos {
+    transform: translateX(-300%);
   }
-  .fotos video {
+  .compra .fotos img {
+    transform: translateX(450%);
+  }
+  .compra .fotos video {
     display: none;
   }
   .grid {
@@ -388,6 +403,15 @@ header {
     grid-template-rows: 1fr;
     width: 100%;
   }
+  .compra .fotos {
+    transform: translateX(-300%);
+  }
+  .compra .fotos img {
+    transform: translateX(400%);
+  }
+  .compra .fotos video {
+    display: none;
+  }
   .texto-compra {
     font-size: 20px;
     transform: translate(20%, -270%);
@@ -396,12 +420,6 @@ header {
     transform: translateX(50%);
     margin: 10px;
     padding: 15px;
-  }
-  .fotos img {
-    transform: translateX(-130%);
-  }
-  .fotos video {
-    display: none;
   }
   .grid {
     grid-template-columns: 1fr;
@@ -469,19 +487,22 @@ header {
     padding: 20px 0px 0px 20px;
     display: block;
   }
-  .texto-compra {
+  .compra .texto-compra {
     font-size: 16px;
     transform: translate(-150%, 200%);
   }
-  .texto-compra form button {
+  .compra .texto-compra form button {
     margin: 10px;
     padding: 15px;
     transform: translateX(-10%);
   }
-  .fotos img {
-    transform: translateX(-150%);
+  .compra .fotos {
+    transform: translateX(-400%);
   }
-  .fotos video {
+  .compra .fotos img {
+    transform: translateX(510%);
+  }
+  .compra .fotos video {
     display: none;
   }
 }

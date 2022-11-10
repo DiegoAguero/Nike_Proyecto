@@ -14,6 +14,15 @@
      .compra{
          @include translateX(30%);
          font-size: 20px;
+        .fotos{
+            @include translateX(-500%);
+            img{
+                @include translateX(600%);
+            }
+            video{
+                @include translateX(730%);
+            }
+        }
      }
  }
  @media screen and (max-width: 768px) and (min-width: 600px){
@@ -29,21 +38,23 @@
          padding: 10px 10px 0px 10px;
      }
      /*Inicio responsive página pegasus39*/
-     .fotos{
-         img{
-             @include translateX(-200%);
-         }
-         video{
-             @include translateX(-230%);
-             height: 50%;
-         }
-     }
+
      .compra{
          @include translateX(30%);
          font-size: 20px;
          .texto-compra{
              @include translateX(-40%);
          }
+         .fotos{
+            @include translateX(-100%);
+            img{
+                @include translateX(100%);
+            }
+            video{
+                @include translateX(130%);
+                height: 50%;
+            }
+        }
      }
          
  }
@@ -64,24 +75,28 @@
         grid-template-columns: 1fr;
         grid-template-rows: 1fr;
      }
-     .texto-compra{
-        font-size: 20px;
-        transform: translate(20% ,-270%);
-        form{
-            button{
-                margin: 10px;
-                padding: 15px;
+     .compra{
+        .texto-compra{
+            font-size: 20px;
+            transform: translate(40% ,-250%);
+            form{
+                button{
+                    margin: 10px;
+                    padding: 15px;
+                }
             }
         }
-    }
-     .fotos{
-        img{
-            @include translateX(-120%);
-        }
-        video{
-             display: none;
+        .fotos{
+            @include translateX(-300%);
+            img{
+                @include translateX(450%);
+            }
+            video{
+                 display: none;
+             }
          }
      }
+
      //Contacto
      .grid{
          grid-template-columns: 1fr;
@@ -126,6 +141,15 @@
          grid-template-columns: 1fr;
          grid-template-rows: 1fr;
          width: 100%;
+         .fotos{
+            @include translateX(-300%);
+            img{
+                @include translateX(400%);
+            }
+             video{
+                 display: none;
+             }
+         }
      }
      .texto-compra{
          font-size: 20px;
@@ -138,14 +162,7 @@
              }
          }
      }
-     .fotos{
-        img{
-            @include translateX(-130%);
-        }
-         video{
-             display: none;
-         }
-     }
+
      //Contacto
      .grid{
          grid-template-columns: 1fr;
@@ -217,23 +234,28 @@
              }
          }
      }
-     .texto-compra{
-         font-size: 16px;
-         @include translate(-150% ,200%);
-         form{
-             button{
-                 margin: 10px;
-                 padding: 15px;
-                 @include translateX(-10%)
-             }
-         }
+     .compra{
+        .texto-compra{
+            font-size: 16px;
+            @include translate(-150% ,200%);
+            form{
+                button{
+                    margin: 10px;
+                    padding: 15px;
+                    @include translateX(-10%)
+                }
+            }
+        }
+        .fotos{
+           @include translateX(-400%);
+           img{
+               @include translateX(510%);
+           }
+            video{
+                display: none;
+            }
+        }
+   
      }
-     .fotos{
-         img{
-             @include translateX(-150%);
-         }
-         video{
-             display: none;
-         }
-     }
+
  }
