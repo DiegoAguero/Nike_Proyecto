@@ -8,6 +8,14 @@ $color-botones-hover: rgb(184, 183, 183);
     animation: mover 1s;
     animation-iteration-count: 1;
 }
+#boton-privacidad{
+    @include boton;
+    margin-left: 10px;
+    &:hover{
+        color: $color-global-negro;
+        text-decoration: none;
+    }
+}
 body{
     font-family: 'Comic Sans';
     background-color: $color-global;
@@ -16,9 +24,9 @@ body{
 }
 header{
     font-size: 20px;
-    background-color: $color-global;
-
+    background-color: $color-global !important;
 }
+
 .active{
     background-color:#e4e4e4; 
     border-radius: 20px;
@@ -68,7 +76,6 @@ header{
         }
         &:hover .info-foto{
             height: 50%;
-
         }
         .info-foto{
             position: relative;
@@ -111,6 +118,9 @@ header{
         color: $color-global;
     }
 }
+.texto-destacado{
+    text-shadow: 2px 2px 6px #000000;
+}
 /*Fin index*/
 
 /*Inicio Contacto*/
@@ -140,10 +150,7 @@ header{
             margin-bottom: 16px; 
             resize: vertical 
         }
-        .submit{
-            @include boton;
-        }
-        .reset{
+        .boton{
             @include boton;
         }
         .contact{
@@ -218,7 +225,6 @@ header{
 /*Fin pegasus39*/
 
 /*Inicio privacidad*/
-
 .parrafo{
     text-align: justify;
     margin: 10px 50px 0px 50px;
