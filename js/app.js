@@ -1,28 +1,23 @@
 let todosNombresProductos = []
 let todosPreciosProductos = []
 let todosDetallesProductos = []
+let sumaPrecios = 0
 //Obtener precio y nombre del producto añadido
 function getPrice(precio){
-    // let precio = document.getElementsByClassName("price").innerHTML;
-    // precio = document.querySelector("p.price").innerHTML;
-    // precio = precio.replace("$", "")
-    // let precioNumerico = Number(precio)
-    // console.log(precioNumerico)
-    // alert("Fue añadido al carrito")
-    // getName()
-    //sumarPrecio(precioNumerico)
     console.log(`Precio del producto: ${precio}`)
     todosPreciosProductos.push(`${precio}`);
 }
+
 function getName(nombre){
     console.log(`Nombre del producto: ${nombre}`);
     todosNombresProductos.push(`${nombre}`);
-
 }
+
 function getDetails(detalle){
     console.log(`Detalle del producto: ${detalle}`)
     todosDetallesProductos.push(`${detalle}`);
 }
+
 function addProduct(){
     nombreProducto = prompt("ingrese el nombre del producto")
     precioProducto = parseFloat(prompt("Ingrese precio del producto"))
@@ -34,9 +29,17 @@ function addProduct(){
 }
 
 function showProducts(){
+    todosPreciosProductos = parseFloat(todosPreciosProductos)
     for(let i=0; i<todosNombresProductos.length; i++){
+        if(todosNombresProductos[i] == "" || isNaN(todosPreciosProductos[i]) || todosDetallesProductos[i] === null){
+            console.log("Hay un dato erroneo/dato no introducido. Vuelva a introducirlos por favor.")
+            break;
+        }else{
         console.log(`Nombres productos: ${todosNombresProductos[i]}\n Precios de los productos: ${todosPreciosProductos[i]} \n Detalles de los productos: ${todosDetallesProductos[i]}`)
+        sumaPrecios += parseFloat(todosPreciosProductos[i]) 
+        }
     }
+    console.log(`La suma del precio total de los productos añadidos al carrito es de: ${sumaPrecios}`)
     
 }
 // function sumarPrecio(x){
