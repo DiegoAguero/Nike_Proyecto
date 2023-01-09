@@ -1,3 +1,3 @@
 # Nike_Proyecto
-Primer proyecto para el curso de desarrollo web.
-PreEntrega2 - Diego Aguero
+Proyecto para el curso de javascript
+PreEntrega1 - Diego Aguero
