@@ -1,83 +1,47 @@
-let todosNombresProductos = []
-let todosPreciosProductos = []
-let todosDetallesProductos = []
+//Este archivo se ejecuta exclusivamente en carrito.html 
 let sumaPrecios = 0
+let contadorMax = 0
+let totalProducts = 0
 //Obtener precio y nombre del producto añadido
 function getPrice(precio){
     console.log(`Precio del producto: ${precio}`)
-    todosPreciosProductos.push(`${precio}`);
+    sumaPrecios += precio;
 }
 
 function getName(nombre){
     console.log(`Nombre del producto: ${nombre}`);
-    todosNombresProductos.push(`${nombre}`);
 }
 
 function getDetails(detalle){
     console.log(`Detalle del producto: ${detalle}`)
-    todosDetallesProductos.push(`${detalle}`);
+}
+
+function calculateDiscount(precio){
+    let totalDescuento = 100;
+    let numeroDescuento = parseInt(prompt("Indique el total del descuento: "))
+    let resultadoDescuento = parseFloat(numeroDescuento/totalDescuento)
+    let descuentoAplicado = parseFloat(resultadoDescuento * precio)
+    sumaPrecios = sumaPrecios - descuentoAplicado
+    console.log(`El descuento es del: ${numeroDescuento}%, el precio queda a: ${sumaPrecios}`)
 }
 
 function addProduct(){
-    nombreProducto = prompt("ingrese el nombre del producto")
-    precioProducto = parseFloat(prompt("Ingrese precio del producto"))
-    detalleProducto = prompt("Ingrese un detalle del producto")
-    alert("Producto añadido")
-    getName(nombreProducto)
-    getPrice(precioProducto)
-    getDetails(detalleProducto)
-}
-
-function showProducts(){
-    todosPreciosProductos = parseFloat(todosPreciosProductos)
-    for(let i=0; i<todosNombresProductos.length; i++){
-        if(todosNombresProductos[i] == "" || isNaN(todosPreciosProductos[i]) || todosDetallesProductos[i] === null){
-            console.log("Hay un dato erroneo/dato no introducido. Vuelva a introducirlos por favor.")
-            break;
-        }else{
-        console.log(`Nombres productos: ${todosNombresProductos[i]}\n Precios de los productos: ${todosPreciosProductos[i]} \n Detalles de los productos: ${todosDetallesProductos[i]}`)
-        sumaPrecios += parseFloat(todosPreciosProductos[i]) 
+    totalProducts = parseInt(prompt("Indique la cantidad de productos que va a comprar"))
+    do{
+        let nombreProducto = prompt("ingrese el nombre del producto")
+        let precioProducto = parseFloat(prompt("Ingrese precio del producto"))
+        let detalleProducto = prompt("Ingrese un detalle del producto")
+        alert("Producto añadido")
+        if(nombreProducto == "" || isNaN(precioProducto) || detalleProducto == ""){
+            alert("Hay un dato vacío o mal introducido. Por favor, intentelo denuevo")
+            return ""
         }
-    }
-    console.log(`La suma del precio total de los productos añadidos al carrito es de: ${sumaPrecios}`)
-    
+        getName(nombreProducto)
+        getPrice(precioProducto)
+        getDetails(detalleProducto)
+        contadorMax++
+    }while(contadorMax < totalProducts)
+    console.log(`Total a pagar $${sumaPrecios}`)
+    calculateDiscount(sumaPrecios);
 }
-// function sumarPrecio(x){
-//     let suma = 0;
-//     let sumaTotal = suma + x;
-//     console.log(sumaTotal)
-// }
-
-// Añadir items a la lista
-
-// let nombre = prompt("Nombre de su zapatilla")
-// let detalle = prompt("Breve detalle de la zapatilla")
-// let precio = parseFloat(prompt("Precio del producto"))
-// let foto = prompt("Url de la foto que le va a poner a la zapatilla")
-// let container = document.getElementById('container')
-// class addProduct{
-//     constructor (nombre, detalle, precio, foto){
-//         this.nombre = nombre;
-//         this.detalle = detalle;
-//         this.precio = parseFloat(precio);
-//         this.foto = foto;
-//     }
-//     addProductToList(){
-        
-//         const div2 = document.createElement('div')
-//         div2.classList.add("card")
-//         div2.style.cssText += 'width: 18rem'
-//         div2.innerHTML = `
-//             <img class='card-img-top' src= '${this.foto}'>
-//             <div class 'card-body'>
-//                 <h5 class = 'card-text'>${this.nombre}}</h5>
-//                 <p class = 'card-text'>${this.detalle}</p>
-//                 <p class = 'card-text'>${this.precio}</p>
-//                 <a href="#" class='btn btn-primary' onclick='getPrice()'>Añadir al carrito</a>
-//             </div>
-//         `
-//         container.appendChild(div2)
-//     }
-// }
-
-// const producto = new addProduct(nombre, detalle, precio, foto);
+addProduct();   
