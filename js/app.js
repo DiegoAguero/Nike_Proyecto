@@ -32,9 +32,9 @@ function addProduct(){
         let precioProducto = parseFloat(prompt("Ingrese precio del producto"))
         let detalleProducto = prompt("Ingrese un detalle del producto")
         alert("Producto añadido")
-        if(nombreProducto == "" || isNaN(precioProducto) || detalleProducto == ""){
+        if(nombreProducto === null || isNaN(precioProducto) || detalleProducto === null){
             alert("Hay un dato vacío o mal introducido. Por favor, intentelo denuevo")
-            return ""
+            return
         }
         getName(nombreProducto)
         getPrice(precioProducto)
