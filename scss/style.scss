@@ -46,6 +46,7 @@ header{
     }
 }
 
+
 /*Seccion descuentos-index*/
 
 .nuevo-img{
@@ -56,6 +57,19 @@ header{
     display: flex;
     flex-flow: row wrap;
     justify-content: space-around;
+    
+    /*Carrito*/
+    .total{
+        width: 25vh;
+        height: 23vh;
+        overflow-y: hidden;
+        border: 1px solid black;
+        padding: 2vh;
+        justify-self: right;
+        span{
+            font-size: 25px;
+        }
+    }
     .caja{
         background-color: beige;
         color: $color-global-negro;
@@ -219,7 +233,7 @@ header{
     }
     .descripcion{
         font-size: 15px;
-        margin: 0 !important;
+        margin: 0 ; //!important
     }
 }
 /*Fin pegasus39*/
