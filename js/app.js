@@ -1,55 +1,4 @@
 // //Este archivo se ejecuta exclusivamente en carrito.html 
-// let sumaPrecios = 0
-// let contadorMax = 0
-// let totalProducts = 0
-// //Obtener precio y nombre del producto añadido
-// function getPrice(precio){
-//     console.log(`Precio del producto: ${precio}`)
-//     sumaPrecios += precio;
-// }
-
-// function getName(nombre){
-//     console.log(`Nombre del producto: ${nombre}`);
-// }
-
-// function getDetails(detalle){
-//     console.log(`Detalle del producto: ${detalle}`)
-// }
-
-// function calculateDiscount(precio){
-//     let totalDescuento = 100;
-//     let numeroDescuento = parseInt(prompt("Indique el total del descuento: "))
-//     let resultadoDescuento = parseFloat(numeroDescuento/totalDescuento)
-//     let descuentoAplicado = parseFloat(resultadoDescuento * precio)
-//     sumaPrecios = sumaPrecios - descuentoAplicado
-//     console.log(`El descuento es del: ${numeroDescuento}%, el precio queda a: ${sumaPrecios}`)
-// }
-
-// function addProduct(){
-//     totalProducts = parseInt(prompt("Indique la cantidad de productos que va a comprar"))
-//     do{
-//         let nombreProducto = prompt("ingrese el nombre del producto")
-//         let precioProducto = parseFloat(prompt("Ingrese precio del producto"))
-//         let detalleProducto = prompt("Ingrese un detalle del producto")
-//         alert("Producto añadido")
-//         if(nombreProducto === null || isNaN(precioProducto) || detalleProducto === null){
-//             alert("Hay un dato vacío o mal introducido. Por favor, intentelo denuevo")
-//             return
-//         }
-//         getName(nombreProducto)
-//         getPrice(precioProducto)
-//         getDetails(detalleProducto)
-//         contadorMax++
-//     }while(contadorMax < totalProducts)
-//     console.log(`Total a pagar $${sumaPrecios}`)
-//     calculateDiscount(sumaPrecios);
-// }
-// addProduct();   
-
-let nombreProducto = []
-let precioProducto = []
-let detalleProducto = []
-let fotoProducto = []
 let productosRegistrados = []
 let sumaPrecios = 0
 let id = 0;
@@ -61,51 +10,9 @@ class Productos{
         this.precio = precio,
         this.detalle = detalle,
         this.foto = foto
-    }
-    //cambia todo a metodos afuera de la clase
-    registrarProductos(){
-        
-
-        this.mostrarProductos(nombreProducto)
-        this.calcularPrecio()
-    }
-
-
-    mostrarProductos(array){
-        const div2 = document.createElement('div')
-        div2.innerHTML = ''
-        // for(let i = 0; i< nombreProducto.length; i++){    
-        for(let producto of array){
-
-            
-            
-            div2.classList.add("card")
-            div2.style.cssText += 'width: 18rem'
-            div2.innerHTML += `
-                <img class='card-img-top mt-2' src= '${fotoProducto[i]}'>
-                <div class 'card-body'>
-                    <h5 class = 'card-text mt-1 ml-1'>${nombreProducto[i]}</h5>
-                    <p class = 'card-text ml-1'>${detalleProducto[i]}</p>
-                    <p class = 'card-text ml-1' style='font-size: 20px'>$${precioProducto[i]}</p>
-                    <a href="#" class='btn btn-primary' onclick=''>Añadir al carrito</a>
-                </div>
-            `
-            container.appendChild(div2)
-        }
     } 
+} 
 
-    // }
-
-    // calcularPrecio(){
-    //     for(let i = 0; i< precioProducto.length; i++){
-    //         sumaPrecios += precioProducto[i]
-    //     }       
-    //     let totalPrecio = document.getElementById("totalPrecio")
-    //     const span = document.createElement('span')
-    //     span.innerHTML = `${sumaPrecios}`
-    //     totalPrecio.appendChild(span)
-    // }
-}
 //Hacer funcion de mostrarProductos e incluirla en registrarProductos!!
 function registrarProductos(array){
     let nombre = prompt("Indique el nombre del producto por favor: ")
@@ -132,23 +39,35 @@ function mostrarProductos(array){
         div2.classList.add("card")
         div2.style.cssText += 'width: 18rem; flex: 0 1 1;'
         div2.innerHTML = `
-            <img class='card-img-top' width='20%' src= '${producto.foto}'>
+            <img class='card-img-top' style='object-fit:cover' height='200px' src= '${producto.foto}'>
             <div class 'card-body'>
                 <h5 class = 'card-text mt-1 ml-1'>${producto.nombre}</h5>
                 <p class = 'card-text ml-1'>${producto.detalle}</p>
                 <p class = 'card-text ml-1' style='font-size: 20px'>$${producto.precio}</p>
-                <a href="#" class='btn btn-primary' onclick='getPrice()'>Añadir al carrito</a>
+                <a href="#" class='btn btn-primary' onclick=''>Añadir al carrito</a>
             </div>
         `
         container.appendChild(div2)
     })
 }
-
-let producto = new Productos(id, nombreProducto, precioProducto, detalleProducto, fotoProducto)
+function encontrarProducto(){
+    let buscar = prompt("Escriba el nombre del producto que desea encontrar")
+    const resultado = productosRegistrados.find((prod)=> prod.nombre.toLowerCase() === buscar.toLowerCase())
+    if(resultado == undefined){
+        alert("El nombre no es compatible con el producto buscado.")
+    }else{
+        console.log(`Producto encontrado: ${resultado.nombre}, ${resultado.precio}, ${resultado.detalle}, ${resultado.foto}`)
+    }
+    
+}
+// let producto = new Productos(id, nombreProducto, precioProducto, detalleProducto, fotoProducto)
 let addProductButton = document.getElementById("addProduct")
-addProductButton.addEventListener("click", (e) => {
-    e.preventDefault()
+addProductButton.onclick = (() => {
     registrarProductos(productosRegistrados)
 })
+// let buscador = document.getElementById("buscador")
+// buscador.addEventListener("input", ()=>{
+//     console.log(buscador.value)
 
+// })  
 //Cuando veamos localStorage voy a poder completar el carrito de compras

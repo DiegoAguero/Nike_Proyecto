@@ -67,7 +67,7 @@ header {
 }
 .flex-container .total {
   width: 25vh;
-  height: 23vh;
+  height: 25vh;
   overflow-y: hidden;
   border: 1px solid black;
   padding: 2vh;

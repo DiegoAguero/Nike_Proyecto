@@ -39,7 +39,7 @@
                 </li>
               </ul>
               <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2 rounded" type="search" placeholder="Encuentra tu zapatilla!" aria-label="Search">
+                <input class="form-control mr-sm-2 rounded" type="search" id="buscador" placeholder="Encuentra tu zapatilla!" aria-label="Search">
                 <button class="btn btn-light my-2 my-sm-0" type="submit">Buscar</button>
               </form>
               <a href="pages/carrito.html"><i class="fas fa-shopping-cart fa-xl ml-2 text-dark"></i></a>
@@ -57,6 +57,7 @@
             <hr>
             <span id="totalPrecio">$</span></br>
             <button value="" class="boton" id="addProduct">Añadir Item</button>
+            <button onclick="encontrarProducto()">Encontrar Producto</button>
           </aside>
         </div>
       </div>
