@@ -16,6 +16,7 @@ $color-botones-hover: rgb(184, 183, 183);
         text-decoration: none;
     }
 }
+
 body{
     font-family: 'Comic Sans';
     background-color: $color-global;
@@ -26,7 +27,13 @@ header{
     font-size: 20px;
     background-color: $color-global !important;
 }
-
+.modal-footer{
+    span{
+        position: absolute;
+        left: 4%;
+        font-size: 20px;
+    }
+}
 .active{
     background-color:#e4e4e4; 
     border-radius: 20px;
@@ -51,25 +58,27 @@ header{
 
 .nuevo-img{
    height: 600px;
+   width: 75%;
    @include translateX(16%);
+}
+/*Carrito*/
+.total{
+    transform: translateX(50%);
+    width: 50%;
+    height: 25%;
+    overflow-y: hidden;
+    border: 1px solid black;
+    padding: 2vh;
+    span{
+        font-size: 25px;
+    }
+    
 }
 .flex-container{
     display: flex;
     flex-flow: row wrap;
     justify-content: space-around;
-    
-    /*Carrito*/
-    .total{
-        width: 25vh;
-        height: 25vh;
-        overflow-y: hidden;
-        border: 1px solid black;
-        padding: 2vh;
-        justify-self: right;
-        span{
-            font-size: 25px;
-        }
-    }
+
     .caja{
         background-color: beige;
         color: $color-global-negro;

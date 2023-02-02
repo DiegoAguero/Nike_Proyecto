@@ -33,6 +33,12 @@ header {
   background-color: #f1f1f1 !important;
 }
 
+.modal-footer span {
+  position: absolute;
+  left: 4%;
+  font-size: 20px;
+}
+
 .active {
   background-color: #e4e4e4;
   border-radius: 20px;
@@ -56,25 +62,27 @@ header {
 /*Seccion descuentos-index*/
 .nuevo-img {
   height: 600px;
+  width: 75%;
   transform: translateX(16%);
+}
+
+/*Carrito*/
+.total {
+  transform: translateX(50%);
+  width: 50%;
+  height: 25%;
+  overflow-y: hidden;
+  border: 1px solid black;
+  padding: 2vh;
+}
+.total span {
+  font-size: 25px;
 }
 
 .flex-container {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-around;
-  /*Carrito*/
-}
-.flex-container .total {
-  width: 25vh;
-  height: 25vh;
-  overflow-y: hidden;
-  border: 1px solid black;
-  padding: 2vh;
-  justify-self: right;
-}
-.flex-container .total span {
-  font-size: 25px;
 }
 .flex-container .caja {
   background-color: beige;
