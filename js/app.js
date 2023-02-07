@@ -1,65 +1,44 @@
-// //Este archivo se ejecuta exclusivamente en carrito.html 
-let productosRegistrados = []
+//El archivo funciona en index.html!
 let sumaPrecios = 0
 let id = 0;
 let productoCarrito = []
 let container = document.getElementById("container")
-class Productos{
-    constructor(id ,nombre, precio, detalle, foto){
-        this.id = id,
-        this.nombre = nombre,
-        this.precio = precio,
-        this.detalle = detalle,
-        this.foto = foto
-    } 
-} 
-//Añadimos los productos que pongo a mano
-let producto1 = new Productos(1, "Crater Impact", 150, "Zapatillas - Hombre", "../img/craterimpact.png")
-let producto2 = new Productos(2, "Go Fly Ease", 120, "Zapatillas - Hombre", "../img/flyease.png")
-let producto3 = new Productos(3, "Jordan Air Max 3", 140, "Zapatillas - Hombre", "../img/jordan.png")
-let producto4 = new Productos(4, "Air Huarache", 200, "Zapatillas - Hombre", "../img/airhuarache.png")
-let producto5 = new Productos(5, "Blazer Low 77", 170, "Zapatillas - Hombre", "../img/blazerlow77.png")
-let producto6 = new Productos(6, "Air Max Down", 190, "Zapatillas - Hombre", "../img/airmaxdown.png")
-let producto7 = new Productos(7, "SB Nyjah Free 2", 180, "Zapatillas - Hombre", "../img/sbnyjahfree2.png")
-let producto8 = new Productos(8, "Lebron Mix", 150, "Zapatillas - Hombre", "../img/lebron-mix.jpg")
-productosRegistrados.push(producto1)
-productosRegistrados.push(producto2)
-productosRegistrados.push(producto3)
-productosRegistrados.push(producto4)
-productosRegistrados.push(producto5)
-productosRegistrados.push(producto6)
-productosRegistrados.push(producto7)
-productosRegistrados.push(producto8)
+let bodyCarrito = document.getElementById('bodyCarrito')
+let formRegistrar = document.getElementById('form')
+let buscador = document.getElementById("buscador")
+let destacado = document.getElementById('tamano')
 
-//Inicializamos el localStorage
+if(localStorage.getItem('prodRegistrado')){
+    productosRegistrados = JSON.parse(localStorage.getItem('prodRegistrado'))
+}else{
+    productosRegistrados.push(producto1, producto2, producto3, producto4, producto5, producto6, producto7, producto8, producto9, producto10)
+    localStorage.setItem('prodRegistrado', JSON.stringify(productosRegistrados))
+}
 document.addEventListener('DOMContentLoaded', ()=>{
     //Verificamos si el usuario anteriormente habia añadido algo al carrito, en caso de que no, se añade un array vacio
     productoCarrito = JSON.parse(localStorage.getItem('carrito')) || []
     mostrarCarrito()
 })
-// let addProductButton = document.getElementById("addProduct")
-// addProductButton.onclick = (() => {
-//     registrarProductos(productosRegistrados)
-// })
-function registrarProductos(array){
-    // Reemplazar estos por un formulario
-    // let nombre = prompt("Indique el nombre del producto por favor: ")
-    // let precio = parseFloat(prompt("Indique el precio de su producto: "))
-    // let detalle = prompt("Indique el detalle de su producto: ")
-    // let foto = prompt("Indique la URL de la foto que quiera poner: ")
 
-    const nuevoProducto = new Productos(array.length + 1, nombre, precio, detalle, foto)
+function registrarProductos(array){
+    let nombre = document.getElementById('nombreProducto')
+    let precio = document.getElementById('precioProducto')
+    let detalle = document.getElementById('detalleProducto')
+    let foto = document.getElementById('fotoProducto')
+    const nuevoProducto = new Productos(array.length + 1, nombre.value, parseFloat(precio.value), detalle.value, foto.value)
     array.push(nuevoProducto)
+    //Guardamos otra vez para que se actualice el localStorage a medida que vayamos registrando productos
+    localStorage.setItem('prodRegistrado', JSON.stringify(array))
     calcularPrecio(array)
     mostrarProductos(array)
+    formRegistrar.reset()
 }
+
 function calcularPrecio(array){
     const calculo = array.reduce((sumaPrecios, array) => (sumaPrecios + array.precio), 0)
     let totalPrecio = document.getElementById("totalPrecio")
     totalPrecio.innerHTML = `Total: $${calculo}`
 }
-
-
 
 function mostrarProductos(array){
     //Se hace un innerHTML vacío para limpiar el carrito de compras, porque al añadir 2 o más productos se empiezan a repetir entre si.
@@ -78,23 +57,33 @@ function mostrarProductos(array){
         `
     })
 }
+mostrarProductos(productosRegistrados)
 function agregarCarrito(idProducto){
-    const id = productosRegistrados.find((prod)=> prod.id === idProducto)
-    productoCarrito.push(id)
-    console.log(productoCarrito)
-    calcularPrecio(productoCarrito)
+    const prodExiste = productoCarrito.some(producto => producto.id === idProducto)
+    if(prodExiste){
+        Swal.fire({
+            icon: "error",
+            title: "Ya existe este producto en el carrito",
+            timer: 2000
+        })
+    }else{
+        const id = productosRegistrados.find((prod)=> prod.id === idProducto)
+        productoCarrito.push(id)
+        calcularPrecio(productoCarrito)
+    }
+    
     mostrarCarrito()
 }
+//añadir cantidad por producto
 function eliminarCarrito(id){
     const idProducto = id
     productoCarrito = productoCarrito.filter((prod)=> prod.id !== idProducto)
-    console.log(productoCarrito)
     calcularPrecio(productoCarrito)
-    mostrarCarrito(productoCarrito)
+    mostrarCarrito()
 
 }
 function mostrarCarrito(){
-    const bodyCarrito = document.getElementById('bodyCarrito')
+    
     bodyCarrito.innerHTML = ''
     productoCarrito.forEach((addedProd)=>{
         bodyCarrito.innerHTML += `
@@ -108,29 +97,81 @@ function mostrarCarrito(){
         </div>
     </div>
     `
-    carritoLocal()
     })
+    carritoLocal()
 }
-mostrarProductos(productosRegistrados)
-
-function encontrarProducto(){
-    let buscar = prompt("Escriba el nombre del producto que desea encontrar")
-    const resultado = productosRegistrados.find((prod)=> prod.nombre.toLowerCase() === buscar.toLowerCase())
-    if(resultado == undefined){
-        alert("El nombre no es compatible con el producto buscado.")
-    }else{
-        console.log(`Producto encontrado: ${resultado.nombre}, ${resultado.precio}, ${resultado.detalle}, ${resultado.foto}`)
-    }
-    
-}
-
 function carritoLocal(){
     localStorage.setItem("carrito", JSON.stringify(productoCarrito))
 }
-// let buscador = document.getElementById("buscador")
 
-// buscador.addEventListener("input", ()=>{
-//     console.log(buscador.value)
+function encontrarProducto(buscado, array){
+    //Sacamos lo que hay en la seccion destacado para poder tener mayor visibilidad en el catalogo
+    destacado.innerHTML = ''
+    //cambiar por barra de busqueda
+    let busqueda = array.filter(
+        (prod)=> prod.nombre.toLowerCase().includes(buscado.toLowerCase())
+    )
+    if(buscado == ''){
+        destacado.innerHTML =`
+            <h1 style="text-align: center;">Destacados</h2>
+            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <!--Buscar fotos con la misma altura!!-->
+                        <img class="d-block w-75 nuevo-img" src="img/pegasus392-portada.jpg" alt="First slide">
+                        <div class="carousel-caption d-md-block">
+                            <h5 class="texto-destacado">Pegasus39</h5>
+                            <a href="pages/pegasus39.html" class="boton-destacado">Ver más</a>
+                        </div>
+                        
+                    </div>
 
-// })  
+                    <div class="carousel-item">
+                    <img class="d-block w-75 nuevo-img"  src="img/crater_impact.jpg"alt="Second slide">
+                    <div class="carousel-caption d-md-block">
+                        <h5 class="texto-destacado">Crater Impact</h5>
+                    </div>
+                    </div>
+
+                    <div class="carousel-item">
+                    <img class="d-block w-75 nuevo-img" src="img/lebron-mix.jpg" alt="Third slide">
+                    <div class="carousel-caption d-md-block">
+                        <h5 class="texto-destacado">Lebron Mix</h5>
+                    </div>
+                    </div>
+                </div>
+
+                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Anterior</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Siguiente</span>
+                </a>
+            </div>
+        `
+    }
+    if(busqueda.length == 0){
+        container.innerHTML =`
+            <h2> No hay productos </h2>
+        `
+    }
+    mostrarProductos(busqueda)
+}
+
+let addProductButton = document.getElementById("addProduct")
+addProductButton.onclick = (() => {
+    console.log("Boton funcionando")
+    registrarProductos(productosRegistrados)
+})
+
+buscador.addEventListener("input", ()=>{
+    encontrarProducto(buscador.value, productosRegistrados)
+})  
 //Cuando veamos localStorage voy a poder completar el carrito de compras
