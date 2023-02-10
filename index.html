@@ -45,7 +45,12 @@
             <button type="button" class="btn btn-light" data-toggle="modal" data-target="#exampleModal">
               <i class="fas fa-shopping-cart fa-xl text-dark"></i>
             </button>
-            <button type="button" class="btn btn-light ml-1" data-toggle="modal" data-target="#addProd">Añadir productos</button>
+            <button type="button" class="btn btn-light ml-2" data-toggle="modal" data-target="#addProd">Añadir productos</button>
+            <select name="filtrar" id="filtrar" class="form-select ml-2">
+              <option value="" selected disabled>Filtrar por:</option>
+              <option value="hombre">Hombre</option>
+              <option value="mujer">Mujer</option>
+            </select>
           </div>
         </nav>
     </header>
@@ -73,13 +78,12 @@
 
               <label for="fotoProducto">URL de la foto</label>
               <input type="text" id="fotoProducto" name="fotoProducto"></br>
-
-              <button type="button" id="addProduct" value="Agregar producto">Agregar producto</button>
             </fieldset>
           </form>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" id="addProduct" class="btn btn-secondary ml-2" value="Agregar producto">Agregar producto</button>
         </div>
       </div>
     </div>
@@ -152,64 +156,8 @@
           </a>
         </div>
       </section>
-
-      <!--<section class="flex-container">
-        <div class="caja">
-          <img src="img/craterimpact.png" alt="craterimpact">
-          <div class="info-foto">
-            <div class="texto-foto">
-              Crater Impact
-            </div>
-          </div>
-        </div>
-        
-        <div class="caja">
-          <img src="img/flyease.png" alt="goflyease">
-          <div class="info-foto">
-            <div class="texto-foto">
-              Go FlyEase
-            </div>
-          </div>
-        </div>
-        
-        <div class="caja">
-          <img src="img/jordan.png" alt="jordanairmax3">
-          <div class="info-foto">
-            <div class="texto-foto">
-              Jordan Air Max 3
-            </div>
-          </div>
-        </div>
-      </section>-->
       <span style="display: block; text-align: center; font-size: 25px; font-weight: bold; margin-top: 10px;">Catálogo</span>
       <div class="flex-container mt-2" id="container">
-        <!-- <div class="card" style="width: 18rem;">
-          <img class="card-img-top" src="img/craterimpact.png" alt="craterimpact">
-          <div class="card-body">
-            <h5 class="card-title name" name="name1">Crater Impact</h5>
-            <p class="card-text">Del patio a las aceras, las Nike Crater Impact son toda una declaración de estilo. Este diseño que te hará sentir bien está confeccionado con, al menos, un 20 % de contenido reciclado. Cuentan con una amortiguación de espuma Crater Foam para dejar huella al jugar de muchas formas.</p>
-            <p class="card-text price" style="font-size:20px" name="price1" >$150</p>
-            <button id="agregar1" class="btn btn-primary">Añadir al carrito</button>
-          </div>
-        </div>
-        <div class="card" style="width: 18rem;">
-          <img class="card-img-top" src="img/flyease.png" alt="goflyease">
-          <div class="card-body">
-            <h5 class="card-title name" name="name2">Go Fly Ease</h5>
-            <p class="card-text">Justo cuando pensabas que ya lo habías visto todo, llega Nike para sorprenderte con una nueva forma de ponerte las zapatillas de forma rápida y sencilla. Genial para las personas con movilidad limitada que buscan que sean fáciles de poner o para quienes quieren algo que sea fácil de poner y quitar.</p>
-            <p class="card-text price" style="font-size:20px" name="price2" >$120</p>
-            <button id="agregar2" class="btn btn-primary">Añadir al carrito</button>
-          </div>
-        </div>
-        <div class="card" style="width: 18rem;">
-          <img class="card-img-top" src="img/jordan.png" alt="jordanairmax3">
-          <div class="card-body">
-            <h5 class="card-title name" name="name3">Jordan Air Max 3</h5>
-            <p class="card-text">Forma parte de la historia y la tradición de Jordan con las Jordan Max Aura 3. Inspiradas en el rico legado de las zapatillas de baloncesto de la marca, cuentan con la energía de unas zapatillas de baloncesto y un diseño que introduce un nuevo giro a los detalles clásicos.</p>
-            <p class="card-text price" style="font-size:20px" name="price3" >$140</p>
-            <button id="agregar3" class="btn btn-primary">Añadir al carrito</button>
-          </div>
-        </div> -->
       </div>
     </main> 
 

@@ -7,6 +7,8 @@ let bodyCarrito = document.getElementById('bodyCarrito')
 let formRegistrar = document.getElementById('form')
 let buscador = document.getElementById("buscador")
 let destacado = document.getElementById('tamano')
+let addProductButton = document.getElementById("addProduct")
+let filtrarSelect = document.getElementById('filtrar')
 
 if(localStorage.getItem('prodRegistrado')){
     productosRegistrados = JSON.parse(localStorage.getItem('prodRegistrado'))
@@ -49,7 +51,7 @@ function mostrarProductos(array){
                 <img class='card-img-top' style='object-fit:cover' height='200px' src= '${producto.foto}'>
                 <div class 'card-body'>
                     <h5 class = 'card-text mt-1 ml-1'>${producto.nombre}</h5>
-                    <p class = 'card-text ml-1'>${producto.detalle}</p>
+                    <p class = 'card-text ml-1'>Zapatilla - ${producto.detalle}</p>
                     <p class = 'card-text ml-1' style='font-size: 20px'>$${producto.precio}</p>
                     <button onclick='agregarCarrito(${producto.id})' class='btn btn-primary m-2'>Añadir al carrito</a>
                 </div>
@@ -67,6 +69,11 @@ function agregarCarrito(idProducto){
             timer: 2000
         })
     }else{
+        Swal.fire({
+            icon: "success",
+            title: "Añadiste un producto al carrito!",
+            timer: 2000
+        })
         const id = productosRegistrados.find((prod)=> prod.id === idProducto)
         productoCarrito.push(id)
         calcularPrecio(productoCarrito)
@@ -83,7 +90,6 @@ function eliminarCarrito(id){
 
 }
 function mostrarCarrito(){
-    
     bodyCarrito.innerHTML = ''
     productoCarrito.forEach((addedProd)=>{
         bodyCarrito.innerHTML += `
@@ -91,7 +97,7 @@ function mostrarCarrito(){
         <img class='card-img-top' style='object-fit:cover' height='200px' src= '${addedProd.foto}'>
         <div class 'card-body'>
             <h5 class = 'card-text mt-1 ml-1'>${addedProd.nombre}</h5>
-            <p class = 'card-text ml-1'>${addedProd.detalle}</p>
+            <p class = 'card-text ml-1'>Zapatilla - ${addedProd.detalle}</p>
             <p class = 'card-text ml-1' style='font-size: 20px'>$${addedProd.precio}</p>
             <button onclick='eliminarCarrito(${addedProd.id})' class='btn btn-danger m-2'>Eliminar del carrito</a>
         </div>
@@ -107,7 +113,6 @@ function carritoLocal(){
 function encontrarProducto(buscado, array){
     //Sacamos lo que hay en la seccion destacado para poder tener mayor visibilidad en el catalogo
     destacado.innerHTML = ''
-    //cambiar por barra de busqueda
     let busqueda = array.filter(
         (prod)=> prod.nombre.toLowerCase().includes(buscado.toLowerCase())
     )
@@ -158,14 +163,24 @@ function encontrarProducto(buscado, array){
         `
     }
     if(busqueda.length == 0){
-        container.innerHTML =`
-            <h2> No hay productos </h2>
+        console.log("Nada")
+        container.innerHTML +=`
+            <h2> No se encontraron productos </h2>
         `
     }
     mostrarProductos(busqueda)
 }
+function filtrarHombre(array){
+    const filtrarPorHombre = [].concat(array)
+    let filtro = filtrarPorHombre.filter( prod => prod.detalle.toLowerCase() == "hombre")
+    mostrarProductos(filtro)
+}
+function filtrarMujer(array){
+    const filtrarPorMujer = [].concat(array)
+    let filtro = filtrarPorMujer.filter( prod => prod.detalle.toLowerCase() == "mujer")
+    mostrarProductos(filtro)
+}
 
-let addProductButton = document.getElementById("addProduct")
 addProductButton.onclick = (() => {
     console.log("Boton funcionando")
     registrarProductos(productosRegistrados)
@@ -174,4 +189,7 @@ addProductButton.onclick = (() => {
 buscador.addEventListener("input", ()=>{
     encontrarProducto(buscador.value, productosRegistrados)
 })  
-//Cuando veamos localStorage voy a poder completar el carrito de compras
+
+filtrarSelect.addEventListener("change", ()=>{
+    filtrarSelect.value == "hombre" ? filtrarHombre(productosRegistrados) : filtrarMujer(productosRegistrados)
+})
