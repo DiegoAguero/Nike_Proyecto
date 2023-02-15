@@ -40,13 +40,76 @@
               </ul>
               <form class="form-inline my-2 my-lg-0">
                 <input class="form-control mr-sm-2 rounded" type="search" placeholder="Encuentra tu zapatilla!" aria-label="Search">
-                <button class="btn btn-light my-2 my-sm-0" type="submit">Buscar</button>
               </form>
+              <button type="button" class="btn btn-light" data-toggle="modal" data-target="#exampleModal">
+                <i class="fas fa-shopping-cart fa-xl text-dark"></i>
+              </button>
+              <button type="button" class="btn btn-light ml-2" data-toggle="modal" data-target="#addProd">Añadir productos</button>
+              <select name="filtrar" id="filtrar" class="form-select ml-2">
+                <option value="" selected disabled>Filtrar por:</option>
+                <option value="hombre">Hombre</option>
+                <option value="mujer">Mujer</option>
+              </select>
             </div>
-            <a href="#" class="btn btn-primary ml-2" onclick="pedirDatos()">Añadir producto</a>
-          </nav>
-      </header>
+        </nav>
+    </header>
+    <!-- Modales -->
+    <!-- Modal de Registrar productos-->
+    <div class="modal fade" id="addProd" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Añadir Productos</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            </div>
+            <div class="modal-body">
+            <form class="form" id="form">
+                <fieldset>
+                <label for="nombreProducto">Nombre del producto</label>
+                <input type="text" class="mb-1" id="nombreProducto" name="nombreProducto"></br>
 
+                <label for="precioProducto">Precio del producto</label>
+                <input type="number" id="precioProducto" name="precioProducto"></br>
+
+                <label for="categoriaProducto">Categoria del producto (Hombre/Mujer)</label>
+                <input type="text" id="categoriaProducto" name="categoriaProducto"></br>
+
+                <label for="fotoProducto">URL de la foto</label>
+                <input type="text" id="fotoProducto" name="fotoProducto"></br>
+                </fieldset>
+            </form>
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" id="addProduct" class="btn btn-secondary ml-2" value="Agregar producto">Agregar producto</button>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <!-- Modal Carrito de compras-->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Carrito</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            </div>
+            <div class="modal-body" id="bodyCarrito">
+            <h3>Carrito vacio! Añade productos para poder verlos!</h3>
+            </div>
+            <div class="modal-footer">
+            <span id="totalPrecio">Total:</span>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary" id="botonFinalizarCompra">Finalizar compra</button>
+            </div>
+        </div>
+        </div>
+    </div>
     <!-- Sección de Descuentos -->
     <main>
         <h1 style="text-align: center;">Descuentos</h1>
@@ -78,77 +141,6 @@
                   <a href="#" class="btn btn-primary">Añadir al carrito</a>
                 </div>
             </div>
-            <!--<div class="caja">
-                <a href="pegasus39.html" target="_blank"><img src="../img/pegasus39.png" alt=""></a>
-                <div class="info-foto">
-                    <div class="texto-foto" style="font-size: 12px;">
-                       Pegasus 39 <span style="text-decoration:line-through 1px">100$</span> <span>66$</span>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="caja">
-                <img src="../img/airmax97.png" alt="airmax97">
-                <div class="info-foto">
-                    <div class="texto-foto" style="font-size: 12px;">
-                        Air Max 97 <span style="text-decoration:line-through 1px">200$</span> <span>120$</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="caja">
-                <img src="../img/airmaxdown.png"  alt="airmaxdown">
-                <div class="info-foto">
-                    <div class="texto-foto" style="font-size: 12px;">
-                        Air Max Down <span style="text-decoration:line-through 1px">140$</span> <span>70$</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="caja">
-                <img src="../img/craterimpact.png" alt="craterimpact">
-                <div class="info-foto">
-                    <div class="texto-foto" style="font-size: 12px;">
-                        Crater Impact <span style="text-decoration:line-through 1px">100$</span> <span>45$</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="caja">
-                <img src="../img/jordan.png" alt="jordan">
-                <div class="info-foto">
-                    <div class="texto-foto" style="font-size: 12px;">
-                        Jordan Air Max <span style="text-decoration:line-through 1px">250$</span> <span>135$</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="caja">
-                <img src="../img/airhuarache.png" alt="airhuarache">
-                <div class="info-foto">
-                    <div class="texto-foto" style="font-size: 12px;">
-                        Air Huarache <span style="text-decoration:line-through 1px">200$</span> <span>100$</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="caja">
-                <img src="../img/blazerlow77.png" alt="blazerlow77">
-                <div class="info-foto">
-                    <div class="texto-foto" style="font-size: 12px;">
-                        Blazer Low 77 <span style="text-decoration:line-through 1px">100$</span> <span>40$</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="caja">
-                <img src="../img/sbnyjahfree2.png" alt="sbnyjahfree2">
-                <div class="info-foto">
-                    <div class="texto-foto" style="font-size: 12px;">
-                        SB Nyjah Free 2 <span style="text-decoration:line-through 1px">150$</span> <span>80$</span>
-                    </div>
-                </div>
-            </div>-->
         </section>
     </main>
     <!-- Sección Footer -->
@@ -160,6 +152,8 @@
           <li><a href="https://www.linkedin.com/company/nike/" target="_blank"><i class="fa-brands fa-linkedin fa-2xl text-dark"></a></i></li>
         </ul>
     </footer>
+    <script src="../js/class.js"></script>
+    <script src="../js/carrito.js"></script>
     <script src="../js/app.js"></script>
     <!--Bootstrap-->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

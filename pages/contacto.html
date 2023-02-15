@@ -11,7 +11,7 @@
     <script src="https://kit.fontawesome.com/60f68411d6.js" crossorigin="anonymous"></script>
     <title>Nike</title>
 </head>
-<body>
+<body id="body">
     <!-- Inicio de barra de navegación -->
     <header>
         <nav class="navbar navbar-light navbar-expand-lg p-4 m-3">
@@ -41,12 +41,39 @@
               </ul>
               <form class="form-inline my-2 my-lg-0">
                 <input class="form-control mr-sm-2 rounded" type="search" placeholder="Encuentra tu zapatilla!" aria-label="Search">
-                <button class="btn btn-light my-2 my-sm-0" type="submit">Buscar</button>
               </form>
+              <button type="button" class="btn btn-light" data-toggle="modal" data-target="#exampleModal">
+                <i class="fas fa-shopping-cart fa-xl text-dark"></i>
+              </button>
+              <select name="filtrar" id="filtrar" class="form-select ml-2">
+                <option value="" selected disabled>Filtrar por:</option>
+                <option value="hombre">Hombre</option>
+                <option value="mujer">Mujer</option>
+              </select>
             </div>
         </nav>
     </header>
-
+    <!-- Modal Carrito de compras-->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Carrito</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body" id="bodyCarrito">
+            <h3>Carrito vacio! Añade productos para poder verlos!</h3>
+          </div>
+          <div class="modal-footer">
+            <span id="totalPrecio">Total:</span>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary" id="botonFinalizarCompra">Finalizar compra</button>
+          </div>
+        </div>
+      </div>
+    </div>
     <main class="grid">
         <form action="" class="form">
             <fieldset>
@@ -85,8 +112,8 @@
     <!-- Sweet Alert 2 -->
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <!-- Javascript -->
-    <!-- <script src="../js/class.js"></script>
-    <script src="../js/app.js"></script> -->
+    <script src="../js/class.js"></script>
+    <script src="../js/carrito.js"></script>
     <!--Bootstrap-->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>

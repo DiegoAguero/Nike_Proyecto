@@ -1,0 +1,92 @@
+[
+    {
+        "id": 1,
+        "nombre":"Crater Impact",
+        "precio":150,
+        "categoria":"Hombre",
+        "cantidad": 0,
+        "cantidadTotal":5,
+        "foto":"img/craterimpact.png"
+    },
+    {
+        "id": 2,
+        "nombre":"Go Fly Ease",
+        "precio":120,
+        "categoria":"Hombre",
+        "cantidad": 0,
+        "cantidadTotal":5,
+        "foto":"img/flyease.png"
+    },
+    {
+        "id": 3,
+        "nombre":"Jordan Air Max 3",
+        "precio":140,
+        "categoria":"Hombre",
+        "cantidad": 0,
+        "cantidadTotal":5,
+        "foto":"img/jordan.png"
+    },
+    {
+        "id": 4,
+        "nombre":"Air Huarache",
+        "precio":200,
+        "categoria":"Hombre",
+        "cantidad": 0,
+        "cantidadTotal":5,
+        "foto":"img/airhuarache.png"
+    },
+    {
+        "id": 5,
+        "nombre":"Blazer Low 77",
+        "precio":170,
+        "categoria":"Hombre",
+        "cantidad": 0,
+        "cantidadTotal":5,
+        "foto":"img/blazerlow77.png"
+    },
+    {
+        "id": 6,
+        "nombre":"Air Max Down",
+        "precio":190,
+        "categoria":"Hombre",
+        "cantidad": 0,
+        "cantidadTotal":5,
+        "foto":"img/airmaxdown.png"
+    },
+    {
+        "id": 7,
+        "nombre":"SB Nyjah Free 2",
+        "precio":180,
+        "categoria":"Hombre",
+        "cantidad": 0,
+        "cantidadTotal":5,
+        "foto":"img/sbnyjahfree2.png"
+    },
+    {
+        "id":8,
+        "nombre":"Blazer Mid '77 Vintage",
+        "precio": 150,
+        "categoria":"Mujer",
+        "cantidad": 0,
+        "cantidadTotal":5,
+        "foto":"img/blazermidvintage.jpg"
+    },
+    {
+        "id":9,
+        "nombre":"Nike Dunk High",
+        "precio": 120,
+        "categoria":"Mujer",
+        "cantidad": 0,
+        "cantidadTotal":5,
+        "foto":"img/nikedunkhigh.jpg"
+    },
+    {
+        "id":10,
+        "nombre":"Metcon 8",
+        "precio": 165,
+        "categoria":"Mujer",
+        "cantidad": 0,
+        "cantidadTotal":5,
+        "foto":"img/metcon8.jpg"
+    }
+]
