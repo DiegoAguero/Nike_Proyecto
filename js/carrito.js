@@ -104,8 +104,9 @@ function calcularPrecio(array){
 function finalizarCompra(array){
     let precioArray = calcularPrecio(array)
     Swal.fire({
-        title: '¿Querés finalizar la compra?',
-        text:'',
+        icon: 'info',
+        title: '🛒',
+        text:'¿Querés finalizar la compra?',
         showDenyButton: true,
         showCancelButton: true,
         confirmButtonText: 'Si',
@@ -114,7 +115,8 @@ function finalizarCompra(array){
         if(resultado.isConfirmed){
             Swal.fire({
                 icon: 'success',
-                title: `Ha finalizado su compra, su total será de: $${precioArray}`,
+                title: `Urray!`,
+                text: `Ha finalizado su compra, su total será de: $${precioArray}`,
                 timer: 2000
             })
             productoCarrito = []
@@ -123,8 +125,8 @@ function finalizarCompra(array){
         }else{
             Swal.fire({
                 icon: 'info',
-                text: '',
-                title: `No finalizó su compra, en caso de querer hacerlo, sus productos seguirán en el carrito`,
+                title: `Ugh...`,
+                text: 'No finalizó su compra, en caso de querer hacerlo, sus productos seguirán en el carrito',
                 timer: 2000
             })
         }
@@ -140,6 +142,7 @@ function vaciarCarrito(){
     const productos = productoCarrito.map(prod=>{
         if(prod.cantidad >= 1){
             prod.cantidadTotal+= prod.cantidad
+            prod.cantidad = 0
             mostrarProductos(productosRegistrados)
         }
     })
