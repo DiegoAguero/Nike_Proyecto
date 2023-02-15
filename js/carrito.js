@@ -134,6 +134,9 @@ function finalizarCompra(array){
 function vaciarCarrito(){
     //Hacemos que antes de que se borre el array con todos mis objetos verifique si tiene productos en el carrito, en caso de tenerlos, devuelve la cantidad
     //a cada producto y lo deja como antes
+    if(productoCarrito.length == 0){
+        Swal.fire({icon: 'error',title: 'Error',text: 'No puedes vaciar el carrito si no hay ningún producto dentro!'})
+    }
     const productos = productoCarrito.map(prod=>{
         if(prod.cantidad >= 1){
             prod.cantidadTotal+= prod.cantidad
