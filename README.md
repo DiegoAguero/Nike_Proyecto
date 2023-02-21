@@ -7,9 +7,9 @@ Al entrar, verás una página compuesta por una barra de navegación, una barra 
 
 Al usar la barra de busqueda, buscará los productos que estén previamente registrados, dejándote añadir al carrito el/los mismos que se encuentren.
 
-En el carrito de compras se irán almacenando todos los productos que añadas al carrito con sus cantidades exactas y tiene un botón que dice finalizar compra el cual dará la suma total de los productos añadidos y nos cerrará el flujo de javascript.
+En el carrito de compras se irán almacenando todos los productos que añadas al carrito con sus cantidades exactas y tiene un botón que dice "Finalizar Compra" el cual dará la suma total de los productos añadidos y nos cerrará el flujo de javascript.
 
-En el botón de 'Añadir productos', tendrás un formulario con:
+En el botón de "Añadir productos", tendrás un formulario con:
 - Nombre del producto
 - Precio del producto
 - Categoria del producto(Hombre/Mujer)
