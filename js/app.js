@@ -28,14 +28,12 @@ function registrarProductos(array){
     let foto = document.getElementById('fotoProducto')
     const nuevoProducto = new Productos(array.length + 1, nombre.value, parseFloat(precio.value), categoria.value, cantidadCarrito, parseInt(cantidadTotal.value), foto.value)
     array.push(nuevoProducto)
-    //Guardamos otra vez para que se actualice el localStorage a medida que vayamos registrando productos
     localStorage.setItem('prodRegistrado', JSON.stringify(array))
     mostrarProductos(array)
     formRegistrar.reset()
 }
 
 function mostrarProductos(array){
-    //Se hace un innerHTML vacío para limpiar el carrito de compras, porque al añadir 2 o más productos se empiezan a repetir entre si
     container.innerHTML = ''
     array.forEach((producto) =>{
         container.innerHTML += `
@@ -55,7 +53,7 @@ function mostrarProductos(array){
 
 
 function encontrarProducto(buscado, array){
-    //Sacamos lo que hay en la seccion destacado para poder tener mayor visibilidad en el catalogo
+    //Sacamos lo que hay en la seccion destacado para poder tener mayor visibilidad en el producto buscado
     destacado.innerHTML = ''
     let busqueda = array.filter(
         (prod)=> prod.nombre.toLowerCase().includes(buscado.toLowerCase())
