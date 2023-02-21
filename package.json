@@ -13,5 +13,9 @@
     "url": "github.com/DiegoAguero/Nike_Proyecto/"
   },
   "author": "Diego Aguero",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "bootstrap": "^4.3.1",
+    "sweetalert2": "^11.7.2"
+  }
 }

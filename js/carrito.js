@@ -3,13 +3,13 @@ let bodyCarrito = document.getElementById('bodyCarrito')
 let botonFinalizarCompra = document.getElementById('botonFinalizarCompra')
 let totalPrecio = document.getElementById("totalPrecio")
 document.addEventListener('DOMContentLoaded', ()=>{
-    //Verificamos si el usuario anteriormente habia añadido algo al carrito, en caso de que no, se añade un array vacio
     productoCarrito = JSON.parse(localStorage.getItem('carrito')) || []
     mostrarCarrito()
 })
 
 function agregarCarrito(idProducto){
     const prodExiste = productoCarrito.some(producto => producto.id === idProducto)
+
     if(prodExiste){
         const prodCantidad = productoCarrito.map(prod => {
             if(prod.id === idProducto){
@@ -19,10 +19,9 @@ function agregarCarrito(idProducto){
                         title: `No hay más stock de ${prod.nombre}!`,
                         timer: 2000
                     })
-                }else{
-                    prod.cantidad++
-                    prod.cantidadTotal--
-                    mostrarProductos(productosRegistrados)
+                }else{       
+                        prod.cantidad++
+                        prod.cantidadTotal--
                     Swal.fire({
                         icon: "success",
                         title: `Añadiste ${prod.cantidad} ${prod.nombre} al carrito!`,
@@ -39,12 +38,19 @@ function agregarCarrito(idProducto){
             timer: 2000
         })
         const id = productosRegistrados.find((prod)=> prod.id === idProducto)
-        id.cantidad++
-        id.cantidadTotal--
-        productoCarrito.push(id)
-        //Hacemos que se vaya mostrando cada vez que se agregue o se elimine un producto para que se actualice la cantidadTotal en mostrarProductos
-        mostrarProductos(productosRegistrados)
-        calcularPrecio(productoCarrito)
+        if(id.cantidadTotal == 0){
+            Swal.fire({
+                icon: "error",
+                title: `No hay más stock de ${id.nombre}!`,
+                timer: 2000
+            })
+        }else{
+            id.cantidad++
+            id.cantidadTotal--
+            productoCarrito.push(id)
+            calcularPrecio(productoCarrito)
+        }
+
     }
     mostrarCarrito()
 }
@@ -60,7 +66,6 @@ function eliminarCarrito(id){
                 }
                 prod.cantidad--
                 prod.cantidadTotal++
-                mostrarProductos(productosRegistrados)
                 mostrarCarrito()
             }
         })
@@ -90,7 +95,7 @@ function mostrarCarrito(){
         `
         })
         calcularPrecio(productoCarrito)
-        carritoLocal()
+        carritoLocal()  
     }
 }
 function carritoLocal(){
@@ -115,18 +120,23 @@ function finalizarCompra(array){
         if(resultado.isConfirmed){
             Swal.fire({
                 icon: 'success',
-                title: `Urray!`,
+                title: `Hurray!`,
                 text: `Ha finalizado su compra, su total será de: $${precioArray}`,
                 timer: 2000
+            })
+            productoCarrito.map(prod=>{
+                prod.cantidad = 0
             })
             productoCarrito = []
             localStorage.removeItem('carrito')
             mostrarCarrito()
+            mostrarProductos(productosRegistrados)
+            filtrarSelect.value = 'noFiltrar'
         }else{
             Swal.fire({
                 icon: 'info',
                 title: `Ugh...`,
-                text: 'No finalizó su compra, en caso de querer hacerlo, sus productos seguirán en el carrito',
+                text: 'No finalizó su compra, en caso de querer hacerlo, sus productos seguirán en el carrito!  ',
                 timer: 2000
             })
         }
@@ -134,8 +144,8 @@ function finalizarCompra(array){
 }
 
 function vaciarCarrito(){
-    //Hacemos que antes de que se borre el array con todos mis objetos verifique si tiene productos en el carrito, en caso de tenerlos, devuelve la cantidad
-    //a cada producto y lo deja como antes
+    //Hacemos que antes de que se borre el array con todos mis objetos verifique si tiene productos en el carrito, en caso de tenerlos
+    //devuelve la cantidad a cada producto y lo deja como antes
     if(productoCarrito.length == 0){
         Swal.fire({icon: 'error',title: 'Error',text: 'No puedes vaciar el carrito si no hay ningún producto dentro!'})
     }

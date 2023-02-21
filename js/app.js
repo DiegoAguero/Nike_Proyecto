@@ -29,16 +29,13 @@ function registrarProductos(array){
     const nuevoProducto = new Productos(array.length + 1, nombre.value, parseFloat(precio.value), categoria.value, cantidadCarrito, parseInt(cantidadTotal.value), foto.value)
     array.push(nuevoProducto)
     //Guardamos otra vez para que se actualice el localStorage a medida que vayamos registrando productos
-    console.log(cantidadTotal.value)
     localStorage.setItem('prodRegistrado', JSON.stringify(array))
-    //calcularPrecio(array)
     mostrarProductos(array)
     formRegistrar.reset()
 }
 
 function mostrarProductos(array){
-    //Se hace un innerHTML vacío para limpiar el carrito de compras, porque al añadir 2 o más productos se empiezan a repetir entre si.
-  
+    //Se hace un innerHTML vacío para limpiar el carrito de compras, porque al añadir 2 o más productos se empiezan a repetir entre si
     container.innerHTML = ''
     array.forEach((producto) =>{
         container.innerHTML += `
@@ -55,15 +52,8 @@ function mostrarProductos(array){
         `
     })
 }
-async function cargarProductos(){
-    const respuesta = await fetch("productos.json")
-    const datos = await respuesta.json()
-    localStorage.setItem('prodRegistrado', JSON.stringify(datos))
-    datos.forEach((prod)=>{
-        let nuevoProd = new Productos(prod.id, prod.nombre, parseFloat(prod.precio), prod.categoria, parseInt(prod.cantidad), parseInt(prod.cantidadTotal), prod.foto)
-        productosRegistrados.push(nuevoProd)
-    })
-}
+
+
 function encontrarProducto(buscado, array){
     //Sacamos lo que hay en la seccion destacado para poder tener mayor visibilidad en el catalogo
     destacado.innerHTML = ''
@@ -122,11 +112,13 @@ function encontrarProducto(buscado, array){
     }
     mostrarProductos(busqueda)
 }
+
 function filtrarHombre(array){
     const filtrarPorHombre = [].concat(array)
-    let filtro = filtrarPorHombre.filter( prod => prod.categoria.toLowerCase() == "hombre")
+    let filtro = filtrarPorHombre.filter( prod => prod.categoria.toLowerCase() == "hombre") 
     mostrarProductos(filtro)
 }
+
 function filtrarMujer(array){
     const filtrarPorMujer = [].concat(array)
     let filtro = filtrarPorMujer.filter( prod => prod.categoria.toLowerCase() == "mujer")
@@ -142,14 +134,19 @@ buscador.addEventListener("input", ()=>{
 })  
 
 filtrarSelect.addEventListener("change", ()=>{
-    filtrarSelect.value == "hombre" ? filtrarHombre(productosRegistrados) : filtrarMujer(productosRegistrados)
+    if(filtrarSelect.value == "hombre"){
+        filtrarHombre(productosRegistrados)
+    }else if(filtrarSelect.value == "mujer") {
+        filtrarMujer(productosRegistrados)
+    }else if(filtrarSelect.value == "noFiltrar"){
+        mostrarProductos(productosRegistrados)
+    }
 })
 
 //Codigo
 setTimeout(()=>{
     spinnerTexto.innerHTML = ''
     spinner.remove()
-    //Vuelvo a poner el texto del catálogo
     textoCatalogo.innerHTML = `<span style="display: block; text-align: center; font-size: 25px; font-weight: bold; margin-top: 10px" id="textoCatalogo">Catálogo</span>`
     mostrarProductos(productosRegistrados)
 }, 3000)
