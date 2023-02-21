@@ -1,6 +1,4 @@
 ### Introducción
-Este es mi primer proyecto hecho con javascript, la verdad fue un camino divertido y con muchos desafíos, dado a que era mi primera vez utilizando Javascript. 
-
 Al entrar, verás una página compuesta por una barra de navegación, una barra de busqueda, un botón de carrito de compras, un botón que dice "Añadir productos" y un select con 3 filtros:
 - No filtrar
 - Hombre
